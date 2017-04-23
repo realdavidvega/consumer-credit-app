@@ -1,3 +1,4 @@
+import { AuthService } from './auth.service';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -9,5 +10,4 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'app works!';
   
-  constructor(public router: Router) {}
 }

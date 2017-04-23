@@ -2,11 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule, Http, RequestOptions } from '@angular/http';
-
 import { AppComponent } from './app.component';
 import { routing } from './app.routes';
+import { AuthService } from './auth.service';
 import { AuthGuard } from './authguard';
-import { LoginComponent } from './home/login/login.component';
 import { RegisterComponent } from './home/register/register.component';
 import { OrderComponent } from './home/order/order.component';
 import { OnboardingComponent } from './onboarding/onboarding.component';
@@ -17,7 +16,6 @@ import { CardComponent } from './onboarding/billing/card/card.component';
 import { OverviewComponent } from './onboarding/overview/overview.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeModule } from './home/home.module';
-import { HomeService } from './home/home.service';
 import { RouterModule } from '@angular/router';
 
 import { AuthHttp, AuthConfig } from 'angular2-jwt';
@@ -51,7 +49,7 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
       deps: [Http, RequestOptions ]
     },
     AuthGuard,
-    HomeService
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
