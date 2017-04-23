@@ -43,6 +43,6 @@ constructor(public router: Router) {
   public logout() {
     // Remove token from localStorage
     localStorage.removeItem('id_token');
-    this.router.navigate(['/home']);
+    this.router.navigate(['/login']);
   }
 }

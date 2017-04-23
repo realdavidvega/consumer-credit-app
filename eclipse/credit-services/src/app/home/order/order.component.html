@@ -1,3 +1,62 @@
- <div>
-  HOI
+<div class="row">
+  <div class="col-xs-12">
+    <form [formGroup]="orderForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="idOrder">ID</label>
+            <input
+              type="number"
+              id="id"
+              class="form-control"
+              formControlName="idOrder">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="nameOrder">Name</label>
+            <input
+              type="text"
+              id="name"
+              class="form-control"
+              formControlName="nameOrder">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="imageOrder">Image URL</label>
+            <input
+              type="text"
+              id="image-url"
+              class="form-control"
+              formControlName="imageOrder">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="priceOrder">Price</label>
+            <input
+              type="number"
+              id="price"
+              class="form-control"
+              formControlName="priceOrder">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <button type="submit" class="btn btn-success" [disabled]="!orderForm.valid">Generate</button>
+          <button type="submit" class="btn btn-info" (click)="onClear()">Clear</button>
+        </div>
+      </div>
+    </form>
+  </div>
 </div>
+<hr>
+

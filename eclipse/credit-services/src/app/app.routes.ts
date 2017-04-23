@@ -6,8 +6,9 @@ import { Routes, RouterModule } from '@angular/router';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'}, //general
-  { path: 'home', loadChildren: 'app/home/#HomeModule' },
-  { path: 'general', component: OnboardingComponent }
+  { path: 'home', loadChildren: './home/home.module#HomeModule' },
+  { path: 'general', component: OnboardingComponent },
+  { path: '**', loadChildren: './home/home.module#HomeModule' }
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(routes);
