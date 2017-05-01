@@ -8,16 +8,20 @@
 			<hr>
 
 			<div class="row">
-				<app-on-payment [ngClass]="{'disabled': activations.onPayment}"></app-on-payment>
-				<app-on-person [ngClass]="{'disabled': !activations.onPerson}"></app-on-person>
-				<app-on-overview [ngClass]="{'disabled': activations.onOverview}"></app-on-overview>
+				<div class="off-hide" [hidden]="activations.onPayment">
+					<app-on-payment ></app-on-payment>
+				</div>
+				<div class="off-hide">
+					<app-on-overview [hidden]="activations.onOverview"></app-on-overview>
+				</div>
+				<div class="off-hide">
+					<app-on-person [hidden]="!activations.onPerson"></app-on-person>
+				</div>
 			</div>
-			
-			<div class="row row-fade" [ngClass]="{'row-faded': !activations.onSignature}">
+			<div class="row row-fade"
+				[ngClass]="{'row-faded': !activations.onSignature}">
 				<app-on-person-card></app-on-person-card>
 			</div>
-			
-			
 		</div>
 	</div>
 </div>

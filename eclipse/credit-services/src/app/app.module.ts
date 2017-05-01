@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule, Http, RequestOptions } from '@angular/http';
 import { AppComponent } from './app.component';
@@ -14,6 +14,7 @@ import { OrderService } from './home/order/order.service';
 import { OnboardingModule } from './onboarding/onboarding.module';
 import { OnboardingService } from './onboarding/onboarding.service';
 import { RouterModule } from '@angular/router';
+
 
 import { AuthHttp, AuthConfig } from 'angular2-jwt';
 
@@ -45,6 +46,7 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
     OrderService,
     OnboardingService
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

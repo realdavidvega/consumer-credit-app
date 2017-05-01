@@ -11,6 +11,7 @@ export class OnboardingService {
     onSignature: false,
     onContact: false,
     onCalculation: false,
+    onOverview: false,
     onFinish: false
   };
 
