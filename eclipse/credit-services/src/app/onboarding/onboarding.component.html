@@ -8,11 +8,11 @@
 			<hr>
 
 			<div class="row">
-			<div class="row-fade" [ngClass]="{'row-semifaded': activations.onPayment}">
-				<app-on-payment></app-on-payment>
-			</div>
-				
-				<app-on-overview [hidden]="activations.onOverview"></app-on-overview>
+				<div class="row-fade"
+					[ngClass]="{'row-semifaded': activations.onPayment}">
+					<app-on-overview [hidden]="activations.onOverview"></app-on-overview>
+					<app-on-payment></app-on-payment>
+				</div>
 
 				<div class="row-fade"
 					[ngClass]="{'row-semifaded': !activations.onType}">
