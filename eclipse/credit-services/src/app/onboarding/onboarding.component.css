@@ -40,3 +40,8 @@
 	opacity: 0;
 	pointer-events: none;
 }
+
+.row-semifaded {
+	opacity: 0.3;
+	pointer-events: none;
+}

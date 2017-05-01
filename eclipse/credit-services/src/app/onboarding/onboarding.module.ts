@@ -12,6 +12,7 @@ import { OnFinishComponent } from './on-finish/on-finish.component';
 import { OnStartComponent } from './on-start/on-start.component';
 import { OnOverviewComponent } from './on-overview/on-overview.component';
 import { OnPersonCardComponent } from './on-person/on-person-card/on-person-card.component';
+import { OnTypeComponent } from './on-type/on-type.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { OnPersonCardComponent } from './on-person/on-person-card/on-person-card
     OnFinishComponent,
     OnStartComponent,
     OnOverviewComponent,
-    OnPersonCardComponent
+    OnPersonCardComponent,
+    OnTypeComponent
     
   ],
   imports: [

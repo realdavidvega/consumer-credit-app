@@ -1,27 +1,13 @@
 import { Order } from '../home/order/order';
 import { OrderService } from '../home/order/order.service';
 import { OnboardingService } from './onboarding.service';
-import { Component, OnInit, OnChanges, trigger, transition, style, animate } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 
 
 @Component({
   selector: 'app-onboarding',
   templateUrl: './onboarding.component.html',
-  styleUrls: ['./onboarding.component.css'],
-  animations: [
-    trigger(
-      'enterAnimation', [
-        transition(':enter', [
-          style({transform: 'translateX(100%)', opacity: 0}),
-          animate('500ms', style({transform: 'translateX(0)', opacity: 1}))
-        ]),
-        transition(':leave', [
-          style({transform: 'translateX(0)', opacity: 1}),
-          animate('500ms', style({transform: 'translateX(100%)', opacity: 0}))
-        ])
-      ]
-    )
-  ]
+  styleUrls: ['./onboarding.component.css']
 })
 export class OnboardingComponent implements OnInit {
 
@@ -35,6 +21,7 @@ export class OnboardingComponent implements OnInit {
     onContact: false,
     onCalculation: false,
     onOverview: false,
+    onType: false,
     onFinish: false
   };
   

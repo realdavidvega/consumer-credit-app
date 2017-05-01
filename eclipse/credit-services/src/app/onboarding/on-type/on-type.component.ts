@@ -2,21 +2,21 @@ import { OnboardingService } from '../onboarding.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-on-payment',
-  templateUrl: './on-payment.component.html',
-  styleUrls: ['./on-payment.component.css']
+  selector: 'app-on-type',
+  templateUrl: './on-type.component.html',
+  styleUrls: ['./on-type.component.css']
 })
-export class OnPaymentComponent implements OnInit {
+export class OnTypeComponent implements OnInit {
 
   constructor(private onboardingService: OnboardingService) { }
 
   ngOnInit() {
   }
-
-  onNext(){
-    this.onboardingService.setOnPayment();
+  
+    onBack(){
     this.onboardingService.setOnType();
+    this.onboardingService.setOnPayment();
   }
+  
 
 }
-

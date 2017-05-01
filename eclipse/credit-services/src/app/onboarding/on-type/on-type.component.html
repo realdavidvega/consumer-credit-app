@@ -1,0 +1,39 @@
+
+<div class="col-xs-12 col-md-8 col-lg-8 pull-left">
+	<div class="panel panel-default height">
+		<div class="panel-heading">
+			<b>Seleccione su modo de pago</b>
+		</div>
+		<div class="panel-body">
+			<div class="type-div">
+				<div class="row">
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						<h5 class="text-muted">Modo de pago</h5>
+						<select class="form-control" name="cc_exp_mo">
+							<option value="credito">Pago aplazado</option>
+							<option value="debito">Crédito revolving</option>
+
+						</select>
+						<div class="row">
+							<div class="col-md-12 pad-adjust">
+								<div class="checkbox">
+									<label> <input type="checkbox"
+										class="text-muted">Acepto los <a>términos y
+											condiciones</a>
+									</label>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6 col-sm-6 col-xs-6 pad-adjust text-center">
+								<button (click)="onBack()" type="submit" class="btn btn-primary">Atrás</button>
+							</div>
+							<div class="col-md-6 col-sm-6 col-xs-6 pad-adjust text-center">
+								<button (click)="onNext()" type="submit" class="btn btn-success">Aceptar</button>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>

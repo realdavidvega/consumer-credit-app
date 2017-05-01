@@ -8,15 +8,18 @@
 			<hr>
 
 			<div class="row">
-				<div class="off-hide" [hidden]="activations.onPayment">
-					<app-on-payment ></app-on-payment>
+			<div class="row-fade" [ngClass]="{'row-semifaded': activations.onPayment}">
+				<app-on-payment></app-on-payment>
+			</div>
+				
+				<app-on-overview [hidden]="activations.onOverview"></app-on-overview>
+
+				<div class="row-fade"
+					[ngClass]="{'row-semifaded': !activations.onType}">
+					<app-on-type></app-on-type>
 				</div>
-				<div class="off-hide">
-					<app-on-overview [hidden]="activations.onOverview"></app-on-overview>
-				</div>
-				<div class="off-hide">
-					<app-on-person [hidden]="!activations.onPerson"></app-on-person>
-				</div>
+
+				<app-on-person [hidden]="!activations.onPerson"></app-on-person>
 			</div>
 			<div class="row row-fade"
 				[ngClass]="{'row-faded': !activations.onSignature}">
@@ -25,3 +28,5 @@
 		</div>
 	</div>
 </div>
+
+

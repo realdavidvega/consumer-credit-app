@@ -12,6 +12,7 @@ export class OnboardingService {
     onContact: false,
     onCalculation: false,
     onOverview: false,
+    onType: false,
     onFinish: false
   };
 
@@ -46,6 +47,11 @@ export class OnboardingService {
 
   public setOnCalculation() {
     this.activations.onCalculation = !this.activations.onCalculation;
+    this.subject.next(this.activations);
+  }
+  
+    public setOnType() {
+    this.activations.onType = !this.activations.onType;
     this.subject.next(this.activations);
   }
 
