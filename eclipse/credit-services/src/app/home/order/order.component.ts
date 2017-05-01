@@ -20,7 +20,6 @@ export class OrderComponent implements OnInit {
   orderForm: FormGroup;
   private order: Order;
 
-
   constructor(public router: Router,
     public http: Http,
     public authHttp: AuthHttp,
@@ -34,8 +33,9 @@ export class OrderComponent implements OnInit {
   }
 
   onSubmit() {
-    const newOrder = this.orderForm.value;
-    this.order = newOrder;
+    this.orderService.setOrder(this.orderForm.value);
+    this.order = this.orderService.getOrder();
+    this.router.navigate(['/onboarding']);
   }
 
   onClear() {
@@ -68,6 +68,10 @@ export class OrderComponent implements OnInit {
 
    private navigateBack() {
     this.router.navigate(['../']);
+  }
+  
+  getOrder() {
+    return this.order;
   }
 
 }

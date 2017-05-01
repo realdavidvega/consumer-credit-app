@@ -8,14 +8,11 @@ import { AuthService } from './auth.service';
 import { AuthGuard } from './authguard';
 import { OrderComponent } from './home/order/order.component';
 import { OnboardingComponent } from './onboarding/onboarding.component';
-import { BillingComponent } from './onboarding/billing/billing.component';
-import { ShippingComponent } from './onboarding/shipping/shipping.component';
-import { AddressComponent } from './onboarding/address/address.component';
-import { CardComponent } from './onboarding/billing/card/card.component';
-import { OverviewComponent } from './onboarding/overview/overview.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeModule } from './home/home.module';
 import { OrderService } from './home/order/order.service';
+import { OnboardingModule } from './onboarding/onboarding.module';
+import { OnboardingService } from './onboarding/onboarding.service';
 import { RouterModule } from '@angular/router';
 
 import { AuthHttp, AuthConfig } from 'angular2-jwt';
@@ -27,12 +24,6 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
 @NgModule({
   declarations: [
     AppComponent,
-    OnboardingComponent,
-    BillingComponent,
-    ShippingComponent,
-    AddressComponent,
-    CardComponent,
-    OverviewComponent,
     HeaderComponent
   ],
   imports: [
@@ -40,6 +31,7 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
     FormsModule,
     HttpModule,
     HomeModule,
+    OnboardingModule,
     routing
   ],
   providers: [
@@ -50,7 +42,8 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
     },
     AuthGuard,
     AuthService,
-    OrderService
+    OrderService,
+    OnboardingService
   ],
   bootstrap: [AppComponent]
 })

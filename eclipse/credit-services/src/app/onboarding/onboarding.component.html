@@ -1,3 +1,23 @@
-<p>
-  onboarding works!
-</p>
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="text-center">
+				<i class="fa fa-search-plus pull-left icon"></i>
+				<h2>Onboarding - Secure Checkout</h2>
+			</div>
+			<hr>
+
+			<div class="row">
+				<app-on-payment [ngClass]="{'disabled': activations.onPayment}"></app-on-payment>
+				<app-on-person [ngClass]="{'disabled': !activations.onPerson}"></app-on-person>
+				<app-on-overview [ngClass]="{'disabled': activations.onOverview}"></app-on-overview>
+			</div>
+			
+			<div class="row row-fade" [ngClass]="{'row-faded': !activations.onSignature}">
+				<app-on-person-card></app-on-person-card>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
