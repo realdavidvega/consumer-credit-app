@@ -1,6 +1,6 @@
 import { OnboardingComponent } from './onboarding.component';
 import { onboardingRoutes } from './onboarding.routes';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { OnPersonComponent } from './on-person/on-person.component';
@@ -32,7 +32,8 @@ import { OnPersonCardComponent } from './on-person/on-person-card/on-person-card
     ReactiveFormsModule,
     FormsModule,
     onboardingRoutes
-  ]
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 
 export class OnboardingModule {}

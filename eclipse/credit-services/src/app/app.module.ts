@@ -15,7 +15,6 @@ import { OnboardingModule } from './onboarding/onboarding.module';
 import { OnboardingService } from './onboarding/onboarding.service';
 import { RouterModule } from '@angular/router';
 
-
 import { AuthHttp, AuthConfig } from 'angular2-jwt';
 
 export function authHttpServiceFactory(http: Http, options: RequestOptions) {
