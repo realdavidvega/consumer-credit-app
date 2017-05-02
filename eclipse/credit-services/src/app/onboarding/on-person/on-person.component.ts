@@ -12,5 +12,9 @@ export class OnPersonComponent implements OnInit {
 
   ngOnInit() {
   }
+  
+  onAccept(){
+    this.onboardingService.setOnPerson();
+  }
 
 }

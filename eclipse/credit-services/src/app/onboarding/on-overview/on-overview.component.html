@@ -17,27 +17,27 @@
                             <tbody>
                                 <tr *ngFor="let order of orders">
                                     <td>{{order.nameOrder}}</td>
+                                    <td>{{order.priceOrder}}€</td>
                                     <td>{{order.quantOrder}}</td>
-                                    <td>{{order.priceOrder}}</td>
-                                    <td>{{order.totalOrder}}
+                                    <td>{{order.totalOrder}}€</td>
                                 </tr>
                                 <tr>
                                     <td class="highrow"></td>
 										<td class="highrow"></td>
 										<td class="highrow"><strong>Subtotal</strong></td>
-										<td class="highrow text-right">{{orderToken.subtotal}}</td>
+										<td class="highrow text-right">{{orderToken.subtotal}}€</td>
                                 </tr>
                                 <tr>
                                    <td class="emptyrow"></td>
 										<td class="emptyrow"></td>
 										<td class="emptyrow"><strong>Envío</strong></td>
-										<td class="emptyrow text-right">{{orderToken.send}}</td>
+										<td class="emptyrow text-right">{{orderToken.send}}€</td>
                                 </tr>
                                 <tr>
                                    <td class="emptyrow"><i class="fa fa-barcode iconbig"></i></td>
 										<td class="emptyrow"></td>
 										<td class="emptyrow"><strong>Total</strong></td>
-										<td class="emptyrow text-right">{{orderToken.total}}</td>
+										<td class="emptyrow text-right">{{orderToken.total}}€</td>
                                 </tr>
                             </tbody>
                         </table>
