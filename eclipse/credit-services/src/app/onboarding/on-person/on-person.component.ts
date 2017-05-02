@@ -13,14 +13,4 @@ export class OnPersonComponent implements OnInit {
   ngOnInit() {
   }
 
-  onNext(){
-    this.onboardingService.setOnPerson();
-    this.onboardingService.setOnSignature();
-  }
-  
-  onBack(){
-    this.onboardingService.setOnPerson();
-    this.onboardingService.setOnPayment();
-  }
-  
 }

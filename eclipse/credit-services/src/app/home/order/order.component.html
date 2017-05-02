@@ -1,77 +1,130 @@
 <div class="container">
 	<div class="row">
-	  <div class="col-xs-12">
-	      <div class="text-center">
-	       <i class="fa fa-search-plus pull-left icon"></i>
-	       <h2>Create orders</h2>
-   		  </div>
-         <hr>
-	    <form [formGroup]="orderForm" (ngSubmit)="onSubmit()">
-	      <div class="row">
-	        <div class="col-xs-12">
-	          <div class="form-group">
-	            <label for="idOrder">ID</label>
-	            <input
-	              type="number"
-	              id="id"
-	              class="form-control"
-	              formControlName="idOrder">
-	          </div>
-	        </div>
-	      </div>
-	      <div class="row">
-	        <div class="col-xs-12">
-	          <div class="form-group">
-	            <label for="nameOrder">Name</label>
-	            <input
-	              type="text"
-	              id="name"
-	              class="form-control"
-	              formControlName="nameOrder">
-	          </div>
-	        </div>
-	      </div>
-	      <div class="row">
-	        <div class="col-xs-12">
-	          <div class="form-group">
-	            <label for="imageOrder">Image URL</label>
-	            <input
-	              type="text"
-	              id="image-url"
-	              class="form-control"
-	              formControlName="imageOrder">
-	          </div>
-	        </div>
-	      </div>
-	      <div class="row">
-	        <div class="col-xs-12">
-	          <div class="form-group">
-	            <label for="priceOrder">Price</label>
-	            <input
-	              type="number"
-	              id="price"
-	              class="form-control"
-	              formControlName="priceOrder">
-	          </div>
-	        </div>
-	      </div>
-	      <div class="row">
-	        <div class="col-xs-12">
-	          <button type="submit" class="btn btn-success" [disabled]="!orderForm.valid">Generate</button>
-	          <button type="submit" class="btn btn-info" (click)="onClear()">Clear</button>
-	        </div>
-	      </div>
-	    </form>
-	    <div class="row">
-			<div class="col-xs-12">
-		    	<div class="text-center">
-	       			<i class="fa fa-search-plus pull-left icon"></i>
-	       			<h2>Created orders</h2>
-   		  		</div>
-         		<hr>
-		    </div>
-	    </div>  
-	  </div>
+		<div class="col-xs-12">
+			<div class="text-center">
+				<i class="fa fa-search-plus pull-left icon"></i>
+				<h2>Generador de órdenes</h2>
+			</div>
+			<hr>
+			<form [formGroup]="orderForm" (ngSubmit)="onSubmit()">
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<label for="idOrder">ID</label> <input type="number" id="id"
+								class="form-control" formControlName="idOrder">
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<label for="nameOrder">Nombre</label> <input type="text"
+								id="name" class="form-control" formControlName="nameOrder">
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<label for="quantOrder">Cantidad</label> <input type="number"
+								id="quant" maxlength="3" class="form-control"
+								formControlName="quantOrder">
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<label for="imageOrder">URL de Imagen</label> <input type="text"
+								id="image-url" class="form-control" formControlName="imageOrder">
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<label for="priceOrder">Precio</label> <input type="number"
+								maxlength="4" id="price" class="form-control"
+								formControlName="priceOrder">
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<label for="precioEnvio">Precio envío</label> <input type="number"
+								maxlength="4" id="precioEnvio" class="form-control"
+								formControlName="precioEnvio">
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<button type="submit" class="btn btn-success"
+							[disabled]="!orderForm.valid">Generar</button>
+
+						<button type="button" class="btn btn-info" (click)="onClear()">Limpiar</button>
+						<button type="button" class="btn btn-danger" (click)="deleteOrders()">Borrar</button>
+						<button type="button" class="btn btn-primary" (click)="onSendToken()">Enviar</button>
+
+
+					</div>
+				</div>
+			</form>
+						<div class="text-center">
+				<i class="fa fa-search-plus pull-left icon"></i>
+				<h2>Órdenes generadas</h2>
+			</div>
+			<hr>
+			<div class="col-xs-12 col-md-12 col-lg-12">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<strong>Sus productos</strong>
+					</div>
+					<div class="panel-body">
+						<div class="table-responsive">
+							<table class="table table-condensed">
+								<thead>
+									<tr>
+										<td><strong>Producto</strong></td>
+										<td><strong>Precio</strong></td>
+										<td><strong>Cantidad</strong></td>
+										<td><strong>Total</strong></td>
+									</tr>
+								</thead>
+								<tbody>
+									<tr *ngFor="let order of orders">
+										<td>{{order.nameOrder}}</td>
+										<td>{{order.quantOrder}}</td>
+										<td>{{order.priceOrder}}</td>
+										<td>{{order.totalOrder}}
+									</tr>
+									<tr>
+										<td class="highrow"></td>
+										<td class="highrow"></td>
+										<td class="highrow"><strong>Subtotal</strong></td>
+										<td class="highrow text-right">{{orderToken.subtotal}}</td>
+									</tr>
+									<tr>
+										<td class="emptyrow"></td>
+										<td class="emptyrow"></td>
+										<td class="emptyrow"><strong>Envío</strong></td>
+										<td class="emptyrow text-right">{{orderToken.send}}</td>
+									</tr>
+									<tr>
+										<td class="emptyrow"><i class="fa fa-barcode iconbig"></i></td>
+										<td class="emptyrow"></td>
+										<td class="emptyrow"><strong>Total</strong></td>
+										<td class="emptyrow text-right">{{orderToken.total}}</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
 	</div>
 </div>
 

@@ -16,10 +16,17 @@ import { OnboardingService } from './onboarding/onboarding.service';
 import { RouterModule } from '@angular/router';
 
 import { AuthHttp, AuthConfig } from 'angular2-jwt';
+import { AngularFireModule } from 'angularfire2';
 
 export function authHttpServiceFactory(http: Http, options: RequestOptions) {
   return new AuthHttp( new AuthConfig({}), http, options);
 }
+
+export const firebaseConfig = {
+  apiKey: 'AIzaSyBhEElZurKcBuZHBAYTpWFB4YMyAnot5Xo',
+  authDomain: 'credit-services-8bfcc',
+  databaseURL: 'https://credit-services-8bfcc.firebaseio.com/'
+};
 
 @NgModule({
   declarations: [
@@ -32,7 +39,8 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
     HttpModule,
     HomeModule,
     OnboardingModule,
-    routing
+    routing,
+    AngularFireModule.initializeApp(firebaseConfig)
   ],
   providers: [
     {

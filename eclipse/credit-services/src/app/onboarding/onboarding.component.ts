@@ -11,8 +11,6 @@ import { Component, OnInit, OnChanges } from '@angular/core';
 })
 export class OnboardingComponent implements OnInit {
 
-  private order: Order;
-
   public activations = {
     onStart: false,
     onPayment: false,
@@ -28,7 +26,7 @@ export class OnboardingComponent implements OnInit {
   constructor(private orderService: OrderService, private onboardingService: OnboardingService) { }
 
   ngOnInit() {
-    this.order = this.orderService.getOrder();
+
     this.onboardingService.getActivations().subscribe((data) => {
       this.activations = data;
     });

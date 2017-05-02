@@ -4,12 +4,14 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HomeComponent } from './home.component';
+import { OrderItemComponent } from './order/order-item/order-item.component';
 
 
 @NgModule({
   declarations: [
     OrderComponent,
-    HomeComponent
+    HomeComponent,
+    OrderItemComponent
   ],
   imports: [
     CommonModule,
