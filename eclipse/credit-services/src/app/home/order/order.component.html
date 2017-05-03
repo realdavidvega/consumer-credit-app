@@ -62,12 +62,9 @@
 					<div class="col-xs-12">
 						<button type="submit" class="btn btn-success"
 							[disabled]="!orderForm.valid">Generar</button>
-
 						<button type="button" class="btn btn-info" (click)="onClear()">Limpiar</button>
 						<button type="button" class="btn btn-danger" (click)="deleteOrders()">Borrar</button>
 						<button type="button" class="btn btn-primary" (click)="onSendToken()">Enviar</button>
-
-
 					</div>
 				</div>
 			</form>
@@ -93,31 +90,33 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr *ngFor="let order of orders">
-										<td>{{order.nameOrder}}</td>
-										<td>{{order.quantOrder}}</td>
-										<td>{{order.priceOrder}}</td>
-										<td>{{order.totalOrder}}
-									</tr>
-									<tr>
-										<td class="highrow"></td>
+                            <tr style="border-bottom: 1px solid white;">
+                                <tr *ngFor="let order of orders">
+                                    <td>{{order.nameOrder}}</td>
+                                    <td>{{order.priceOrder}}€</td>
+                                    <td>{{order.quantOrder}}</td>
+                                    <td>{{order.totalOrder}}€</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid white;">
+                                <tr>
+                                    <td class="highrow"></td>
 										<td class="highrow"></td>
 										<td class="highrow"><strong>Subtotal</strong></td>
-										<td class="highrow text-right">{{orderToken.subtotal}}</td>
-									</tr>
-									<tr>
+										<td class="highrow text-right">{{orderToken.subtotal}}€</td>
+                                </tr>
+                                <tr>
+                                   <td class="emptyrow"></td>
 										<td class="emptyrow"></td>
-										<td class="emptyrow"></td>
-										<td class="emptyrow"><strong>Envío</strong></td>
-										<td class="emptyrow text-right">{{orderToken.send}}</td>
-									</tr>
-									<tr>
-										<td class="emptyrow"><i class="fa fa-barcode iconbig"></i></td>
+										<td class="emptyrow" style="border-bottom: 1px solid white;"><strong>Envío</strong></td>
+										<td class="emptyrow text-right" style="border-bottom: 1px solid white;">{{orderToken.send}}€</td>
+                                </tr>
+                                <tr>
+                                   <td class="emptyrow"><i class="fa fa-barcode iconbig"></i></td>
 										<td class="emptyrow"></td>
 										<td class="emptyrow"><strong>Total</strong></td>
-										<td class="emptyrow text-right">{{orderToken.total}}</td>
-									</tr>
-								</tbody>
+										<td class="emptyrow text-right">{{orderToken.total}}€</td>
+                                </tr>
+                            </tbody>
 							</table>
 						</div>
 					</div>

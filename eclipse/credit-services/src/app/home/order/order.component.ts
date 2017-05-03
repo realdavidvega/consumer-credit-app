@@ -62,6 +62,7 @@ export class OrderComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.deleteOrders();
 
     this.initialOrders();
     this.initForm();
