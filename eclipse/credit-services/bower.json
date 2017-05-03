@@ -15,8 +15,6 @@
     "paper-elements": "^1.0.7",
     "gold-elements": "^1.0.1",
     "iron-elements": "^1.0.10",
-    "gold-cc-input": "^1.0.7",
-    "cc-form": "^1.0.12",
-    "bootstrap": "^3.3.7"
+    "gold-cc-input": "^1.0.7"
   }
 }
