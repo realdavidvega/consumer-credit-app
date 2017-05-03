@@ -11,21 +11,13 @@ import { Component, OnInit, OnChanges } from '@angular/core';
 })
 export class OnboardingComponent implements OnInit {
 
-  public activations = {
-    onStart: false,
-    onPayment: false,
-    onPerson: false,
-    onSignature: false,
-    onContact: false,
-    onCalculation: false,
-    onOverview: false,
-    onType: false,
-    onFinish: false
-  };
+  public activations;
   
   constructor(private orderService: OrderService, private onboardingService: OnboardingService) { }
 
   ngOnInit() {
+    
+    this.activations = this.onboardingService.getActivation();
 
     this.onboardingService.getActivations().subscribe((data) => {
       this.activations = data;

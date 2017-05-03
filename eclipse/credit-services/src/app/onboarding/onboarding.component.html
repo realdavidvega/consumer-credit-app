@@ -8,22 +8,29 @@
 			<hr>
 
 			<div class="row">
-				<app-on-person [hidden]="activations.onPerson"></app-on-person>
-			
+				<app-on-person [hidden]="!activations.onPerson"></app-on-person>
+				<app-on-overview></app-on-overview>
+
 				<div class="row-fade"
-					[ngClass]="{'row-semifaded': activations.onPayment}">
-					<app-on-overview></app-on-overview>
-					<app-on-payment [hidden]="!activations.onPerson"></app-on-payment>
+					[ngClass]="{'row-semifaded': activations.onType}">
+
+					<app-on-payment [hidden]="!activations.onPayment"></app-on-payment>
 				</div>
 
-				<div class="row-fade" [hidden]="!activations.onPerson"
-					[ngClass]="{'row-semifaded': !activations.onType}">
-					<app-on-type></app-on-type>
+				<div class="row-fade">
+					<app-on-type [hidden]="!activations.onSignature"></app-on-type>
 				</div>
-			</div>
-			<div class="row row-fade"
-				[ngClass]="{'row-faded': !activations.onSignature}">
-				<app-on-person-card></app-on-person-card>
+
+				<div class="row-fade"
+					[ngClass]="{'row-semifaded': !activations.onType}">
+
+					<app-on-type [hidden]="!activations.onPayment"></app-on-type>
+				</div>
+
+				<div class="row-fade"
+					[ngClass]="{'row-faded': !activations.onPersonCard}">
+					<app-on-person-card></app-on-person-card>
+				</div>
 			</div>
 		</div>
 	</div>

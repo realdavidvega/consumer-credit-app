@@ -14,6 +14,8 @@ export class OrderService {
   private orders: Order[] = [];
 
   private order: Order;
+  
+  sendedOrder = false;
 
   private orderToken: OrderToken;
 
@@ -69,6 +71,8 @@ export class OrderService {
     };
 
     this.tokenChanged.emit(this.orderToken);
+    
+    this.sendedOrder = true;
   }
 
   getOrderToken() {

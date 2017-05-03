@@ -15,6 +15,8 @@ export class OnPersonComponent implements OnInit {
   
   onAccept(){
     this.onboardingService.setOnPerson();
+    this.onboardingService.setOnPayment();
+    this.onboardingService.setOnPersonCard();
   }
 
 }

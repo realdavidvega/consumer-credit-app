@@ -7,7 +7,8 @@ export class OnboardingService {
   private activations = {
     onStart: false,
     onPayment: false,
-    onPerson: false,
+    onPerson: true,
+    onPersonCard: false,
     onSignature: false,
     onContact: false,
     onCalculation: false,
@@ -32,6 +33,11 @@ export class OnboardingService {
 
   public setOnPerson() {
     this.activations.onPerson = !this.activations.onPerson;
+    this.subject.next(this.activations);
+  }
+  
+    public setOnPersonCard() {
+    this.activations.onPersonCard = !this.activations.onPersonCard;
     this.subject.next(this.activations);
   }
 
@@ -62,6 +68,10 @@ export class OnboardingService {
 
   public getActivations(): Observable<any> {
     return this.subject.asObservable();
+  }
+  
+  public getActivation(){
+    return this.activations;
   }
 
 }

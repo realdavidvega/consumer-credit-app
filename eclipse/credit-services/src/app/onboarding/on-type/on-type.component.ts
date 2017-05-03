@@ -12,11 +12,15 @@ export class OnTypeComponent implements OnInit {
 
   ngOnInit() {
   }
-  
-    onBack(){
+
+  onBack() {
     this.onboardingService.setOnType();
-    this.onboardingService.setOnPayment();
   }
   
+  onNext(){
+    this.onboardingService.setOnPayment();
+    this.onboardingService.setOnSignature();
+  }
+
 
 }

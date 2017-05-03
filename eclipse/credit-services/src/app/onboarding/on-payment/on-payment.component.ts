@@ -14,7 +14,6 @@ export class OnPaymentComponent implements OnInit {
   }
 
   onNext(){
-    this.onboardingService.setOnPayment();
     this.onboardingService.setOnType();
   }
 
