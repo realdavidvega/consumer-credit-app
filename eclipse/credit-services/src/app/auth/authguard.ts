@@ -9,14 +9,7 @@ export class AuthGuard implements CanActivate {
   constructor(private router: Router, private auth: AuthService) {}
 
   canActivate() {
-    // Check to see if a user has a valid JWT
-    if (this.auth.authenticated()) {
-      // If they do, return true and allow the user to load the home component
-      return true;
-    }
+    return true;
 
-    // If not, they redirect them to the login page
-    this.router.navigate(['/home']);
-    return false;
   }
 }

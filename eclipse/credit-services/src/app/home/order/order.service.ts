@@ -55,7 +55,7 @@ export class OrderService {
 
     for (let i = 0; i < this.orders.length; i++) {
       subtotal = subtotal + this.orders[i].totalOrder;
-      send = send + this.orders[i].precioEnvio;
+      send = send + this.orders[i].priceSend;
     }
 
     const total = subtotal + send;

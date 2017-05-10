@@ -1,0 +1,22 @@
+<div class="modal-dialog">
+  <div class="registermodal-container">
+    <h3>Register</h3>
+    <form [formGroup]="myForm" (ngSubmit)="onSignup()">
+        <div class="form-group">
+            <input formControlName="email" type="email" id="email" #email class="form-control" placeholder="Email">
+            <span *ngIf="!email.pristine && email.errors != null && email.errors['noEmail']">Invalid mail address</span>
+
+        </div>
+        <div class="form-group">
+            <input formControlName="password" type="password" id="password" class="form-control" placeholder="Password">
+        </div>
+        <div class="form-group">
+            <input formControlName="confirmPassword" type="password" id="confirm-password" #confirmPassword class="form-control" placeholder="Confirm password">
+            <span *ngIf="!confirmPassword.pristine && confirmPassword.errors != null && confirmPassword.errors['passwordsNotMatch']">Passwords do not match</span>
+        </div>
+        <button type="submit" [disabled]="!myForm.valid" class="btn btn-primary">Sign up</button>
+        <hr>Already registered?
+        <a [routerLink]="['/login']" style="cursor: pointer"> Login</a>
+    </form>
+  </div>
+</div>

@@ -14,6 +14,7 @@ import { OnPersonCardComponent } from './on-person/on-person-card/on-person-card
 import { OnTypeComponent } from './on-type/on-type.component';
 import { CommonModule } from '@angular/common';
 import { MaterialModule } from '@angular/material';
+import { OnIneComponent } from './on-ine/on-ine.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { MaterialModule } from '@angular/material';
     OnStartComponent,
     OnOverviewComponent,
     OnPersonCardComponent,
-    OnTypeComponent
+    OnTypeComponent,
+    OnIneComponent
   ],
   imports: [
     CommonModule,

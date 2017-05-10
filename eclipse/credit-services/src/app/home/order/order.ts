@@ -5,6 +5,6 @@ export class Order {
               public imageOrder: string,
               public priceOrder: number,
               public totalOrder: number,
-              public precioEnvio: number
+              public priceSend: number
               ) {}
 }

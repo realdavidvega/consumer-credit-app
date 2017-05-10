@@ -14,6 +14,7 @@ export class OnboardingService {
     onCalculation: false,
     onOverview: false,
     onType: false,
+    onIne: false,
     onFinish: false
   };
 
@@ -58,6 +59,10 @@ export class OnboardingService {
   
     public setOnType() {
     this.activations.onType = !this.activations.onType;
+    this.subject.next(this.activations);
+  }
+  public setOnIne(){
+    this.activations.onIne = !this.activations.onIne;arguments
     this.subject.next(this.activations);
   }
 

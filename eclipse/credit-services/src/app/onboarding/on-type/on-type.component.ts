@@ -19,7 +19,7 @@ export class OnTypeComponent implements OnInit {
   
   onNext(){
     this.onboardingService.setOnPayment();
-    this.onboardingService.setOnSignature();
+    this.onboardingService.setOnIne();
   }
 
 

@@ -8,38 +8,37 @@
 			<hr>
 
 			<div class="row">
-				<app-on-person [hidden]="!activations.onPerson"></app-on-person>
-				<app-on-overview></app-on-overview>
+				 <div class="col-xs-12 col-md-8 col-lg-8 pull-left"> 
+					<app-on-person [hidden]="!activations.onPerson"></app-on-person>
+					<div class="row-fade"
+						[ngClass]="{'row-semifaded': activations.onType}">
+						<app-on-payment [hidden]="!activations.onPayment"></app-on-payment>
+					</div>
+					<div class="row-fade"
+						[ngClass]="{'row-semifaded': !activations.onType}">
+						<app-on-type [hidden]="!activations.onPayment"></app-on-type>
+					</div>
+					<div class="row-fade">
+						<app-on-ine [hidden]="!activations.onIne"></app-on-ine>
+					</div>
+				</div>
+				 <div class="col-xs-12 col-md-4 col-lg-4 pull-right"> 
+					<app-on-overview></app-on-overview>
 
-				<div class="row-fade"
-					[ngClass]="{'row-semifaded': activations.onType}">
+					<div class="row-fade"
+						[ngClass]="{'row-faded': !activations.onPersonCard}">
+						<app-on-person-card></app-on-person-card>
+					</div>
 
-					<app-on-payment [hidden]="!activations.onPayment"></app-on-payment>
+
 				</div>
 
-				<div class="row-fade">
-					<app-on-type [hidden]="!activations.onSignature"></app-on-type>
-				</div>
 
-				<div class="row-fade"
-					[ngClass]="{'row-semifaded': !activations.onType}">
 
-					<app-on-type [hidden]="!activations.onPayment"></app-on-type>
-				</div>
 
-				<div class="row-fade"
-					[ngClass]="{'row-faded': !activations.onPersonCard}">
-					<app-on-person-card></app-on-person-card>
-				</div>
-				
-				
 
-<md-input-container>
-  <input mdInput placeholder="Favorite food" value="Sushi">
-</md-input-container>
 
-				
-				
+
 			</div>
 		</div>
 	</div>

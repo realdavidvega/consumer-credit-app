@@ -27,7 +27,6 @@ export class OrderComponent implements OnInit {
 
   constructor(public router: Router,
     public http: Http,
-    public authHttp: AuthHttp,
     private route: ActivatedRoute,
     private formBuilder: FormBuilder,
     private orderService: OrderService) {
@@ -41,7 +40,7 @@ export class OrderComponent implements OnInit {
       imageOrder: 'null',
       priceOrder: 900,
       totalOrder: null,
-      precioEnvio: 5
+      priceSend: 5
 
     };
 
@@ -52,7 +51,7 @@ export class OrderComponent implements OnInit {
       imageOrder: 'null',
       priceOrder: 900,
       totalOrder: null,
-      precioEnvio: 5
+      priceSend: 5
 
     };
 
@@ -101,7 +100,7 @@ export class OrderComponent implements OnInit {
     const nameOrder = '';
     const imageOrder = '';
     const priceOrder = '';
-    const precioEnvio = '';
+    const priceSend = '';
 
     this.orderForm = this.formBuilder.group({
       idOrder: [idOrder, Validators.required],
@@ -109,7 +108,7 @@ export class OrderComponent implements OnInit {
       nameOrder: [nameOrder, Validators.required],
       imageOrder: [imageOrder, Validators.required],
       priceOrder: [priceOrder, Validators.required],
-      precioEnvio: [precioEnvio,  Validators.required]
+      priceSend: [priceSend,  Validators.required]
     });
   }
 

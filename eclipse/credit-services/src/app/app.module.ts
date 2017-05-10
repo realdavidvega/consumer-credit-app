@@ -1,11 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule, Http, RequestOptions } from '@angular/http';
 import { AppComponent } from './app.component';
 import { routing } from './app.routes';
-import { AuthService } from './auth.service';
-import { AuthGuard } from './authguard';
+import { AuthModule } from './auth/auth.module';
+import { AuthService } from './auth/auth.service';
+import { AuthGuard } from './auth/authguard';
 import { OrderComponent } from './home/order/order.component';
 import { OnboardingComponent } from './onboarding/onboarding.component';
 import { HeaderComponent } from './header/header.component';
@@ -21,10 +22,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AuthHttp, AuthConfig } from 'angular2-jwt';
 import { AngularFireModule } from 'angularfire2';
 import 'hammerjs';
-
-export function authHttpServiceFactory(http: Http, options: RequestOptions) {
-  return new AuthHttp( new AuthConfig({}), http, options);
-}
+import { LoginComponent } from './auth/login.component';
+import { RegisterComponent } from './auth/register.component';
 
 @NgModule({
   declarations: [
@@ -36,19 +35,15 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     HomeModule,
     OnboardingModule,
-    MaterialModule
-    AngularFireModule.initializeApp(firebaseConfig),
-    routing,
+    MaterialModule,
+    AuthModule,
+    routing
   ],
   providers: [
-    {
-      provide: AuthHttp,
-      useFactory: authHttpServiceFactory,
-      deps: [Http, RequestOptions ]
-    },
     AuthGuard,
     AuthService,
     OrderService,

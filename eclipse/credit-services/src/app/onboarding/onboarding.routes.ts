@@ -1,5 +1,6 @@
 
-import { AuthGuard } from '../authguard';
+
+import { AuthGuard } from '../auth/authguard';
 import { OnboardingComponent } from './onboarding.component';
 
 import { ModuleWithProviders } from '@angular/core';
