@@ -13,10 +13,14 @@ import { HomeModule } from './home/home.module';
 import { OrderService } from './home/order/order.service';
 import { OnboardingModule } from './onboarding/onboarding.module';
 import { OnboardingService } from './onboarding/onboarding.service';
+import { CommonModule } from '@angular/common';
+import { MdButtonModule, MdCheckboxModule, MdInputModule, MaterialModule } from '@angular/material';
 import { RouterModule } from '@angular/router';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { AuthHttp, AuthConfig } from 'angular2-jwt';
 import { AngularFireModule } from 'angularfire2';
+import 'hammerjs';
 
 export function authHttpServiceFactory(http: Http, options: RequestOptions) {
   return new AuthHttp( new AuthConfig({}), http, options);
@@ -34,13 +38,16 @@ export const firebaseConfig = {
     HeaderComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     HttpModule,
     HomeModule,
     OnboardingModule,
     routing,
-    AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(firebaseConfig),
+    MaterialModule
   ],
   providers: [
     {
