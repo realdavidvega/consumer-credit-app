@@ -3,7 +3,7 @@ import { User } from './user';
 import { Router } from '@angular/router';
 import { Subject, Observable } from 'rxjs/Rx';
 
-declare var firebase: any;
+import * as firebase from 'firebase';
 
 @Injectable()
 export class AuthService {
@@ -12,33 +12,15 @@ export class AuthService {
 
   async signupUser(user: User){
     await firebase.auth().createUserWithEmailAndPassword(user.email, user.password)
-    .catch(function(error) {
-    // Handle Errors here.
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    if (errorCode == 'auth/weak-password') {
-      alert('The password is too weak.');
-    } else {
-      alert(errorMessage);
-    }
-    console.log(error);
-    });
+    .catch( error => console.log(error));
+    
     this.router.navigate(['/order']);
   }
 
   async signinUser(user: User){
     await firebase.auth().signInWithEmailAndPassword(user.email, user.password)
-    .catch(function(error) {
-    // Handle Errors here.
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    if (errorCode === 'auth/wrong-password') {
-      alert('Wrong password.');
-    } else {
-      alert(errorMessage);
-    }
-    console.log(error);
-    });
+    .catch( error => console.log(error));
+    
     this.router.navigate(['/order']);
   }
 

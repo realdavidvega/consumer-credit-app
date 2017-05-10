@@ -1,22 +1,42 @@
-<div class="modal-dialog">
-  <div class="registermodal-container">
-    <h3>Register</h3>
-    <form [formGroup]="myForm" (ngSubmit)="onSignup()">
-        <div class="form-group">
-            <input formControlName="email" type="email" id="email" #email class="form-control" placeholder="Email">
-            <span *ngIf="!email.pristine && email.errors != null && email.errors['noEmail']">Invalid mail address</span>
 
-        </div>
-        <div class="form-group">
-            <input formControlName="password" type="password" id="password" class="form-control" placeholder="Password">
-        </div>
-        <div class="form-group">
-            <input formControlName="confirmPassword" type="password" id="confirm-password" #confirmPassword class="form-control" placeholder="Confirm password">
-            <span *ngIf="!confirmPassword.pristine && confirmPassword.errors != null && confirmPassword.errors['passwordsNotMatch']">Passwords do not match</span>
-        </div>
-        <button type="submit" [disabled]="!myForm.valid" class="btn btn-primary">Sign up</button>
-        <hr>Already registered?
-        <a [routerLink]="['/login']" style="cursor: pointer"> Login</a>
-    </form>
-  </div>
+<div class="container text-center">
+	<h3>¡Bienvenido a PayCredit!</h3>
+	<h4>La forma más rápida e inteligente de realizar tus pagos.</h4>
+</div>
+
+<div class="modal-dialog">
+	<div class="registermodal-container">
+		<hr>
+			<app-auth-overview></app-auth-overview>
+		<hr>
+		<h3 style="color: grey;">Registrarse en PayCredit</h3>
+		<form [formGroup]="myForm" (ngSubmit)="onSignup()">
+			<div class="form-group">
+				<input formControlName="email" type="email" id="email" #email
+					class="form-control" placeholder="Email"> <span
+					*ngIf="!email.pristine && email.errors != null && email.errors['noEmail']">Email
+					inválido</span>
+
+			</div>
+			<div class="form-group">
+				<input formControlName="password" type="password" id="password"
+					class="form-control" placeholder="Contraseña">
+			</div>
+			<div class="form-group">
+				<input formControlName="confirmPassword" type="password"
+					id="confirm-password" #confirmPassword class="form-control"
+					placeholder="Confirmar contraseña"> <span
+					*ngIf="!confirmPassword.pristine && confirmPassword.errors != null && confirmPassword.errors['passwordsNotMatch']">
+					Las contraseñas no coinciden</span>
+			</div>
+			<button type="submit" [disabled]="!myForm.valid"
+				class="btn btn-block btn-primary">Registarse</button>
+			<hr>
+			<div class="text-center">
+				¿Ya estás registrado? <a [routerLink]="['/login']"
+					style="cursor: pointer">Autenticarse</a>
+			</div>
+
+		</form>
+	</div>
 </div>

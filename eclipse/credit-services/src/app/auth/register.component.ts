@@ -1,5 +1,5 @@
-import { Component, OnInit } from "@angular/core";
-import { FormBuilder, FormGroup, Validators, FormControl } from "@angular/forms";
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { AuthService } from './auth.service';
 
 @Component({
@@ -10,6 +10,7 @@ export class RegisterComponent implements OnInit {
     myForm: FormGroup;
     error = false;
     errorMessage = '';
+
 
     constructor(private fb: FormBuilder, private authService: AuthService) {
     }

@@ -4,11 +4,13 @@ import { RegisterComponent } from './register.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { AuthOverviewComponent } from './auth-overview/auth-overview.component';
 
 @NgModule({
   declarations: [
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    AuthOverviewComponent
   ],
   imports: [
     CommonModule,
