@@ -3,9 +3,6 @@ import { OrderToken } from './ordertoken';
 import { Injectable, EventEmitter } from '@angular/core';
 import { Http, Headers, Response } from '@angular/http';
 
-import { AngularFire, AngularFireDatabase } from 'angularfire2';
-
-
 @Injectable()
 export class OrderService {
   ordersChanged = new EventEmitter<Order[]>();
@@ -14,12 +11,12 @@ export class OrderService {
   private orders: Order[] = [];
 
   private order: Order;
-  
+
   sendedOrder = false;
 
   private orderToken: OrderToken;
 
-  constructor(private http: Http, private af: AngularFire) { }
+  constructor(private http: Http) { }
 
   getOrders() {
     return this.orders;
@@ -71,7 +68,7 @@ export class OrderService {
     };
 
     this.tokenChanged.emit(this.orderToken);
-    
+
     this.sendedOrder = true;
   }
 

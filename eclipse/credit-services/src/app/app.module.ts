@@ -26,12 +26,6 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
   return new AuthHttp( new AuthConfig({}), http, options);
 }
 
-export const firebaseConfig = {
-  apiKey: 'AIzaSyBhEElZurKcBuZHBAYTpWFB4YMyAnot5Xo',
-  authDomain: 'credit-services-8bfcc',
-  databaseURL: 'https://credit-services-8bfcc.firebaseio.com/'
-};
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,9 +39,9 @@ export const firebaseConfig = {
     HttpModule,
     HomeModule,
     OnboardingModule,
-    routing,
-    AngularFireModule.initializeApp(firebaseConfig),
     MaterialModule
+    AngularFireModule.initializeApp(firebaseConfig),
+    routing,
   ],
   providers: [
     {
