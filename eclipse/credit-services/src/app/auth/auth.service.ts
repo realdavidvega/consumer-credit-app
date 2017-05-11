@@ -30,7 +30,7 @@ export class AuthService {
     this.router.navigate(['/onboarding']);
   }
 
-  isAuthenticated(): Observable<boolean> {
+  isAuthenticated(){
     return this.subject.asObservable();
   }
 

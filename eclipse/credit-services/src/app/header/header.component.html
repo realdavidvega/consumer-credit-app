@@ -8,11 +8,11 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a [routerLink]="['/login']">Login</a></li>
-        <li><a [routerLink]="['/order']">Order</a></li>
+        <li><a *ngIf="!isAuth" [routerLink]="['/login']">Login</a></li>
+        <li><a *ngIf="!isAuth" [routerLink]="['/order']">Order</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a [routerLink]="['/login']">Cancelar pago</a></li>
+        <li><a *ngIf="isAuth" (click)="auth.logout()" [routerLink]="['/login']">Cancelar pago</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

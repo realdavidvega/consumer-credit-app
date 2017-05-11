@@ -8,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  
+  isAuth: boolean;
 
   constructor(public auth: AuthService) {}
 
   ngOnInit() {
+    this.auth.isAuthenticated().subscribe((flag: boolean) => {
+      this.isAuth = flag;
+  });
   }
 
 }
