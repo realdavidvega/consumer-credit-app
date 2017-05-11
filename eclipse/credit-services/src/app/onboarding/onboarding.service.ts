@@ -7,7 +7,7 @@ export class OnboardingService {
   private activations = {
     onStart: false,
     onPayment: false,
-    onPerson: true,
+    onPerson: false,
     onPersonCard: false,
     onSignature: false,
     onContact: false,

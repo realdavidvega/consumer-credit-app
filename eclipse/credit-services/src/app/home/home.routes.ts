@@ -5,7 +5,7 @@ import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '', redirectTo: 'order', pathMatch: 'full' },
   { path: 'order', component: OrderComponent}
 ];
 

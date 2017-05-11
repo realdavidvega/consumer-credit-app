@@ -1,3 +1,4 @@
+import { OnboardingService } from '../onboarding/onboarding.service';
 import { Injectable } from '@angular/core';
 import { User } from './user';
 import { Router } from '@angular/router';
@@ -8,39 +9,34 @@ import * as firebase from 'firebase';
 @Injectable()
 export class AuthService {
 
-  constructor(private router: Router) { }
+  user: User;
+  subject = new Subject<boolean>();
 
-  async signupUser(user: User){
-    await firebase.auth().createUserWithEmailAndPassword(user.email, user.password)
-    .catch( error => console.log(error));
-    
-    this.router.navigate(['/order']);
+  constructor(private router: Router, private onboardingService: OnboardingService) {}
+
+  async signupUser(user: User) {
+    sessionStorage.setItem('user_token', JSON.stringify(user));
+    this.subject.next(true);
+
+    this.onboardingService.setOnPerson();
+    this.router.navigate(['/onboarding']);
   }
 
-  async signinUser(user: User){
-    await firebase.auth().signInWithEmailAndPassword(user.email, user.password)
-    .catch( error => console.log(error));
-    
-    this.router.navigate(['/order']);
+  async signinUser(user: User) {
+    sessionStorage.setItem('user_token', JSON.stringify(user));
+    this.subject.next(true);
+
+    this.onboardingService.setOnPayment();
+    this.router.navigate(['/onboarding']);
   }
 
-  isAuthenticated(): Observable<boolean>{
-    var self = this;
-    const subject = new Subject<boolean>();
-    firebase.auth().onAuthStateChanged(function(user){
-      if(user){
-        subject.next(true);
-      } else {
-        subject.next(false);
-        self.router.navigate(['/login']);
-      }
-    });
-
-    return subject.asObservable();
+  isAuthenticated(): Observable<boolean> {
+    return this.subject.asObservable();
   }
 
-  logout(){
-    firebase.auth().signOut();
+  logout() {
+    sessionStorage.removeItem('user_token');
+    this.subject.next(false);
     this.router.navigate(['/login']);
   }
 

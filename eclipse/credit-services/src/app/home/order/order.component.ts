@@ -87,7 +87,7 @@ export class OrderComponent implements OnInit {
   }
 
   onSendToken() {
-    this.router.navigate(['/onboarding']);
+    this.router.navigate(['/login']);
   }
 
   onClear() {
