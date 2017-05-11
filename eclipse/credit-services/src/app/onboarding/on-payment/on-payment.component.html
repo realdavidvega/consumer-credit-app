@@ -5,7 +5,7 @@
 		<div class="credit-card-div">
                         <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12">
-                                <h5 class="text-muted">Número de tarjeta</h5>
+                                <h5>Número de tarjeta</h5>
                             </div>
                             <div class="input-group">
                             <div class="col-md-3 col-sm-3 col-xs-3 pad-adjust">
@@ -24,7 +24,7 @@
                         </div>
                         <div class="row ">
                             <div class="col-md-3 col-sm-3 col-xs-6 pad-adjust">
-                                <h5 class="text-muted">Mes caducidad</h5>
+                                <h5>Mes caducidad</h5>
                                 <select class="form-control" name="cc_exp_mo">
                                 <option value="01">Enero</option>
                                 <option value="02">Febrero</option>
@@ -41,7 +41,7 @@
                             </select>
                             </div>
                             <div class="col-md-3 col-sm-3 col-xs-6 pad-adjust">
-                               <h5 class="text-muted">Año caducidad</h5>
+                               <h5>Año caducidad</h5>
                                 <select class="form-control" name="cc_exp_yr">
                                 <option>2017</option>
                                 <option>2018</option>
@@ -55,7 +55,7 @@
                             </select>
                             </div>
                             <div class="col-md-3 col-sm-3 col-xs-6 pad-adjust">
-                                <h5 class="text-muted">CCV</h5>
+                                <h5>CCV</h5>
                                 <input type="number" maxlength="3" class="form-control" placeholder="CCV" />
                             </div>
                             <div class="col-md-3 col-sm-3 col-xs-3 pad-adjust">
@@ -64,13 +64,12 @@
                         </div>
                         <div class="row ">
                             <div class="col-md-6 col-sm-6 col-xs-12 pad-adjust">
-                            	<h5 class="text-muted">Nombre del portador</h5>
+                            	<h5>Nombre del portador</h5>
                                 <input type="text" maxlength="50" class="form-control" placeholder="Nombre y apellidos" />
                             </div>
                         </div>
                         <div class="row ">
                             <div class="col-md-6 col-sm-6 col-xs-6 pad-adjust text-center">
-                                <button type="submit" class="btn btn-danger">Cancelar</button>
                             </div>
                             <div class="col-md-6 col-sm-6 col-xs-6 pad-adjust text-center">
                                 <button (click)="onNext()" type="submit" class="btn btn-primary">Siguiente</button>

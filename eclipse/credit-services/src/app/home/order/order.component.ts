@@ -37,21 +37,16 @@ export class OrderComponent implements OnInit {
       idOrder: 1,
       quantOrder: 1,
       nameOrder: 'iPhone 7',
-      imageOrder: 'null',
       priceOrder: 900,
-      totalOrder: null,
-      priceSend: 5
-
+      totalOrder: null
     };
 
     const newOrder2 = {
       idOrder: 1,
-      quantOrder: 2,
+      quantOrder: 1,
       nameOrder: 'MacBook Pro 15"',
-      imageOrder: 'null',
-      priceOrder: 900,
-      totalOrder: null,
-      priceSend: 5
+      priceOrder: 1800,
+      totalOrder: null
 
     };
 
@@ -83,7 +78,6 @@ export class OrderComponent implements OnInit {
 
     this.orderService.addOrder(newOrder);
     this.done = true;
-
   }
 
   onSendToken() {
@@ -98,17 +92,13 @@ export class OrderComponent implements OnInit {
    const idOrder = '';
     const quantOrder = '';
     const nameOrder = '';
-    const imageOrder = '';
     const priceOrder = '';
-    const priceSend = '';
 
     this.orderForm = this.formBuilder.group({
       idOrder: [idOrder, Validators.required],
       quantOrder: [quantOrder, Validators.required],
       nameOrder: [nameOrder, Validators.required],
-      imageOrder: [imageOrder, Validators.required],
-      priceOrder: [priceOrder, Validators.required],
-      priceSend: [priceSend,  Validators.required]
+      priceOrder: [priceOrder, Validators.required]
     });
   }
 

@@ -16,7 +16,7 @@
 							<div class="col text-center">
 								<div class="form-group">
 									<md-input-container> <input mdInput
-										placeholder="ID Order" type="tel" formControlName="idOrder">
+										placeholder="ID Order" type="text" formControlName="idOrder">
 									</md-input-container>
 								</div>
 							</div>
@@ -34,7 +34,7 @@
 							<div class="col text-center">
 								<div class="form-group">
 									<md-input-container> <input mdInput
-										placeholder="Cantidad" type="tel" maxlength="3"
+										placeholder="Cantidad" type="text" maxlength="3"
 										formControlName="quantOrder"> </md-input-container>
 								</div>
 							</div>
@@ -43,17 +43,8 @@
 							<div class="col text-center">
 								<div class="form-group">
 									<md-input-container> <input mdInput
-										placeholder="Precio" type="tel" maxlength="4"
+										placeholder="Precio" type="text" maxlength="4"
 										formControlName="priceOrder"> </md-input-container>
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col text-center">
-								<div class="form-group">
-									<md-input-container> <input mdInput
-										placeholder="Costes envío" type="tel" maxlength="2"
-										formControlName="priceSend"> </md-input-container>
 								</div>
 							</div>
 						</div>
@@ -105,13 +96,6 @@
 							<td class="highrow"></td>
 							<td class="highrow"><strong>Subtotal</strong></td>
 							<td class="highrow text-right">{{orderToken.subtotal}}€</td>
-						</tr>
-						<tr>
-							<td class="emptyrow"></td>
-							<td class="emptyrow"></td>
-							<td class="emptyrow" style="border-bottom: 1px solid lightgrey;"><strong>Envío</strong></td>
-							<td class="emptyrow text-right"
-								style="border-bottom: 1px solid lightgrey;">{{orderToken.send}}€</td>
 						</tr>
 						<tr>
 							<td class="emptyrow"><i class="fa fa-barcode iconbig"></i></td>

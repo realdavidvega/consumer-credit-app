@@ -1,3 +1,4 @@
+import { AuthModule } from '../auth/auth.module';
 import { OnboardingComponent } from './onboarding.component';
 import { onboardingRoutes } from './onboarding.routes';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
@@ -37,6 +38,7 @@ import { OnIneComponent } from './on-ine/on-ine.component';
     ReactiveFormsModule,
     FormsModule,
     onboardingRoutes,
+    AuthModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

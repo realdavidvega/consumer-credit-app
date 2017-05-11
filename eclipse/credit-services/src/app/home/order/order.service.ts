@@ -42,7 +42,6 @@ export class OrderService {
     this.ordersChanged.emit(this.orders);
     this.orderToken = {
       order: null,
-      send: 0,
       subtotal: 0,
       total: 0
     };
@@ -51,19 +50,17 @@ export class OrderService {
 
   createOrderToken() {
     let subtotal = 0;
-    let send = 0;
 
     for (let i = 0; i < this.orders.length; i++) {
       subtotal = subtotal + this.orders[i].totalOrder;
-      send = send + this.orders[i].priceSend;
     }
 
-    const total = subtotal + send;
+    const total = subtotal;
 
     this.orderToken = {
       order: this.orders,
       subtotal: subtotal,
-      send: send,
+
       total: total
     };
 

@@ -1,3 +1,5 @@
+import { OrderService } from '../../home/order/order.service';
+import { OrderToken } from '../../home/order/ordertoken';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AuthOverviewComponent implements OnInit {
 
-  constructor() { }
+  orderToken: OrderToken;
+
+  constructor(private orderService: OrderService) { }
 
   ngOnInit() {
+    this.orderToken = this.orderService.getOrderToken();
   }
 
 }

@@ -12,6 +12,8 @@ import { AuthOverviewComponent } from './auth-overview/auth-overview.component';
     RegisterComponent,
     AuthOverviewComponent
   ],
+  exports: [AuthOverviewComponent],
+  
   imports: [
     CommonModule,
     ReactiveFormsModule,

@@ -14,7 +14,7 @@ export class AuthService {
 
   constructor(private router: Router, private onboardingService: OnboardingService) {}
 
-  async signupUser(user: User) {
+  signupUser(user: User) {
     sessionStorage.setItem('user_token', JSON.stringify(user));
     this.subject.next(true);
 
@@ -22,7 +22,7 @@ export class AuthService {
     this.router.navigate(['/onboarding']);
   }
 
-  async signinUser(user: User) {
+  signinUser(user: User) {
     sessionStorage.setItem('user_token', JSON.stringify(user));
     this.subject.next(true);
 
@@ -30,7 +30,7 @@ export class AuthService {
     this.router.navigate(['/onboarding']);
   }
 
-  isAuthenticated(){
+  isAuthenticated(): Observable<boolean> {
     return this.subject.asObservable();
   }
 
