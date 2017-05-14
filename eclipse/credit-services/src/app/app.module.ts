@@ -14,6 +14,7 @@ import { OnboardingModule } from './onboarding/onboarding.module';
 import { OnboardingService } from './onboarding/onboarding.service';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {PaymentService} from "./onboarding/payment.service";
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AuthGuard,
     AuthService,
     OrderService,
-    OnboardingService
+    OnboardingService,
+    PaymentService
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]

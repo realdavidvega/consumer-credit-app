@@ -6,10 +6,10 @@ import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full'}, //general
+  { path: '', redirectTo: 'order', pathMatch: 'full'}, //general
   { path: 'home', loadChildren: './home/home.module#HomeModule' },
   { path: 'onboarding', loadChildren: './onboarding/onboarding.module#OnboardingModule', canActivate: [AuthGuard] },
-  { path: '**', redirectTo: 'login'}
+  { path: '**', redirectTo: 'order'}
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(routes);

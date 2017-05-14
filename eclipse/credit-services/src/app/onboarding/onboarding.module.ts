@@ -14,8 +14,8 @@ import { OnOverviewComponent } from './on-overview/on-overview.component';
 import { OnPersonCardComponent } from './on-person/on-person-card/on-person-card.component';
 import { OnTypeComponent } from './on-type/on-type.component';
 import { CommonModule } from '@angular/common';
-import { MaterialModule } from '@angular/material';
 import { OnIneComponent } from './on-ine/on-ine.component';
+import {PdfViewerComponent} from "ng2-pdf-viewer";
 
 @NgModule({
   declarations: [
@@ -30,11 +30,11 @@ import { OnIneComponent } from './on-ine/on-ine.component';
     OnOverviewComponent,
     OnPersonCardComponent,
     OnTypeComponent,
-    OnIneComponent
-  ],
+    OnIneComponent,
+    PdfViewerComponent
+  ], exports: [OnOverviewComponent],
   imports: [
     CommonModule,
-    MaterialModule,
     ReactiveFormsModule,
     FormsModule,
     onboardingRoutes,

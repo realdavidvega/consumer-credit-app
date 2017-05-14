@@ -5,13 +5,13 @@
       <a class="navbar-brand">PayCredit</a>
     </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a *ngIf="isAuth" (click)="auth.logout()" [routerLink]="['/login']">Cancelar pago</a></li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+  <form class="navbar-form navbar-right" role="search">
+    <button class="btn btn-danger" *ngIf="isAuth" (click)="auth.logout()" [routerLink]="['/login']">Cancelar pago</button>
+  </form>
+  </div>
+
 </nav>
+
+<style>
+
+</style>

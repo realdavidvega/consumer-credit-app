@@ -5,6 +5,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AuthOverviewComponent } from './auth-overview/auth-overview.component';
+import { PopoverModule } from 'ngx-bootstrap/popover';
+import {OnOverviewComponent} from "../onboarding/on-overview/on-overview.component";
 
 @NgModule({
   declarations: [
@@ -12,13 +14,12 @@ import { AuthOverviewComponent } from './auth-overview/auth-overview.component';
     RegisterComponent,
     AuthOverviewComponent
   ],
-  exports: [AuthOverviewComponent],
-  
   imports: [
     CommonModule,
     ReactiveFormsModule,
     FormsModule,
-    authRoutes
+    authRoutes,
+    PopoverModule.forRoot()
   ]
 })
 
