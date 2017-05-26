@@ -1,8 +1,8 @@
 export class Tarjeta {
-  constructor(public number: number,
+  constructor(public card: string,
               public month: string,
               public year: string,
-              public ccv: number,
+              public cvv: string,
               public name: string
   ) {}
 }

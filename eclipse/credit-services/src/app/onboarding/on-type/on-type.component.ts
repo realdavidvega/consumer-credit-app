@@ -1,5 +1,7 @@
 import { OnboardingService } from '../onboarding.service';
 import { Component, OnInit } from '@angular/core';
+import {Tarjeta} from "../tarjeta";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-on-type',
@@ -8,16 +10,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OnTypeComponent implements OnInit {
 
-  constructor(private onboardingService: OnboardingService) { }
+  tarjeta: Tarjeta;
+  myForm: FormGroup;
+
+  constructor(private onboardingService: OnboardingService, private fb: FormBuilder) { }
 
   ngOnInit() {
+    this.onboardingService.getPayment().subscribe((tarjeta: Tarjeta) => this.tarjeta = tarjeta);
+
+    this.myForm = this.fb.group({
+      type: ['', Validators.required],
+      check: [false, Validators.required]
+    });
+
   }
 
   onBack() {
     this.onboardingService.setOnType();
   }
-  
-  onNext(){
+
+  async onNext(){
+    await
+
+
     this.onboardingService.setOnPayment();
     this.onboardingService.setOnIne();
   }
