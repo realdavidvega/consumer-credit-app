@@ -15,12 +15,13 @@ export class OnboardingService {
     onOverview: false,
     onType: false,
     onIne: false,
-    onFinish: false
+    onFinish: false,
+    onConfirm: false
   };
 
   public activSubject = new Subject<any>();
-
   public paymentSubject = new Subject<any>();
+  public typeSubject = new Subject<any>();
 
   constructor() { }
 
@@ -68,6 +69,11 @@ export class OnboardingService {
     this.activSubject.next(this.activations);
   }
 
+  public setOnConfirm(){
+    this.activations.onConfirm = !this.activations.onConfirm;
+    this.activSubject.next(this.activations);
+  }
+
   public setOnFinish() {
     this.activations.onFinish = !this.activations.onFinish;
     this.activSubject.next(this.activations);
@@ -83,6 +89,10 @@ export class OnboardingService {
 
   public getPayment(): Observable<any> {
     return this.paymentSubject.asObservable();
+  }
+
+  public getType(): Observable<any> {
+    return this.typeSubject.asObservable();
   }
 
 }

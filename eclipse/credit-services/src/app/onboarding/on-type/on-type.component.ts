@@ -19,22 +19,17 @@ export class OnTypeComponent implements OnInit {
     this.onboardingService.getPayment().subscribe((tarjeta: Tarjeta) => this.tarjeta = tarjeta);
 
     this.myForm = this.fb.group({
-      type: ['', Validators.required],
-      check: [false, Validators.required]
+      type: ['', Validators.required]
     });
-
   }
 
   onBack() {
     this.onboardingService.setOnType();
   }
 
-  async onNext(){
-    await
-
-
-    this.onboardingService.setOnPayment();
-    this.onboardingService.setOnIne();
+  submitForm(){
+    const type = this.myForm.value;
+    this.onboardingService.typeSubject.next(type);
   }
 
 

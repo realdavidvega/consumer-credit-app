@@ -16,6 +16,7 @@ import { OnTypeComponent } from './on-type/on-type.component';
 import { CommonModule } from '@angular/common';
 import { OnIneComponent } from './on-ine/on-ine.component';
 import {PdfViewerComponent} from "ng2-pdf-viewer";
+import { OnConfirmComponent } from './on-confirm/on-confirm.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import {PdfViewerComponent} from "ng2-pdf-viewer";
     OnPersonCardComponent,
     OnTypeComponent,
     OnIneComponent,
-    PdfViewerComponent
+    PdfViewerComponent,
+    OnConfirmComponent
   ], exports: [OnOverviewComponent],
   imports: [
     CommonModule,

@@ -10,12 +10,12 @@
             <h5>Modo de pago</h5>
             <select class="form-control" name="cc_exp_mo" formControlName="type">
               <option value="credito">Tarjeta de crédito</option>
-              <option value="debito">Pago aplazado</option>
+              <option value="aplazado">Pago aplazado</option>
             </select>
             <div class="row">
               <div class="col-md-12 pad-adjust">
                 <div class="checkbox">
-                  <label> <input type="checkbox" class="text-muted" formControlName="check">He
+                  <label> <input type="checkbox" class="text-muted">He
                     leído y acepto los <a>términos y condiciones</a>
                   </label>
                 </div>
@@ -27,7 +27,7 @@
               <button (click)="onBack()" type="submit" class="btn btn-primary">Atrás</button>
             </div>
             <div class="col-md-6 col-sm-6 col-xs-6 pad-adjust text-center">
-              <button (click)="onNext()" [disabled]="!myForm.valid" type="submit" class="btn btn-success">Aceptar</button>
+              <button (click)="submitForm()" [disabled]="!myForm.valid" type="submit" class="btn btn-success">Aceptar</button>
             </div>
           </div>
         </div>
