@@ -10,10 +10,7 @@ import { Router } from '@angular/router';
 
 export class LoginComponent implements OnInit {
     myForm: FormGroup;
-    error = false;
-    errorMessage = '';
-
-    constructor(private route: Router, private fb: FormBuilder, private authService: AuthService) {}
+    constructor(private fb: FormBuilder, private authService: AuthService) {}
 
     onSignin() {
       this.authService.signinUser(this.myForm.value);

@@ -17,6 +17,7 @@ import { CommonModule } from '@angular/common';
 import { OnIneComponent } from './on-ine/on-ine.component';
 import {PdfViewerComponent} from "ng2-pdf-viewer";
 import { OnConfirmComponent } from './on-confirm/on-confirm.component';
+import { AlertModule } from "ngx-bootstrap";
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { OnConfirmComponent } from './on-confirm/on-confirm.component';
     ReactiveFormsModule,
     FormsModule,
     onboardingRoutes,
-    AuthModule
+    AuthModule,
+    AlertModule.forRoot()
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
