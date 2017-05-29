@@ -1,5 +1,4 @@
-import { Order } from '../home/order/order';
-import { OrderService } from '../home/order/order.service';
+
 import { OnboardingService } from './onboarding.service';
 import { Component, OnInit, OnChanges } from '@angular/core';
 
@@ -13,9 +12,11 @@ export class OnboardingComponent implements OnInit {
 
   public myWidth = 0;
   public activations;
-  constructor(private orderService: OrderService, private onboardingService: OnboardingService) { }
+  public registered = false;
+  constructor(private onboardingService: OnboardingService) { }
 
   ngOnInit() {
+
     this.activations = this.onboardingService.getActivation();
 
     if(this.activations.onPerson) {
@@ -49,8 +50,17 @@ export class OnboardingComponent implements OnInit {
         this.onboardingService.setOnIne();
       }
       this.onboardingService.setOnPayment();
-    })
+    });
 
+    //this.alertTimeout();
   }
+
+  /*
+  alertTimeout() {
+    setTimeout(() => {
+      this.registered = true;
+    }, 3000);
+  }
+  */
 
 }

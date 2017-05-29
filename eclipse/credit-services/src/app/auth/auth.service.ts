@@ -1,5 +1,5 @@
 import { OnboardingService } from '../onboarding/onboarding.service';
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { User } from './user';
 import { Router } from '@angular/router';
 import { Subject, Observable } from 'rxjs/Rx';
@@ -11,6 +11,7 @@ export class AuthService {
 
   user: User;
   subject = new Subject<boolean>();
+  registrado = new EventEmitter<boolean>();
 
   constructor(private router: Router, private onboardingService: OnboardingService) {}
 

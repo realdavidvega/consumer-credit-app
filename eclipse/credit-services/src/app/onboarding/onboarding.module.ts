@@ -19,6 +19,7 @@ import {PdfViewerComponent} from "ng2-pdf-viewer";
 import { OnConfirmComponent } from './on-confirm/on-confirm.component';
 import { AlertModule } from "ngx-bootstrap";
 
+
 @NgModule({
   declarations: [
     OnboardingComponent,
