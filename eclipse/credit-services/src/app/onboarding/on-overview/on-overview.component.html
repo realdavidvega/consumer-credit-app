@@ -1,29 +1,27 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <strong>Sus productos</strong>
+  </div>
+  <div class="panel-body">
+    <div class="table-responsive">
+      <table class="table table-condensed">
+        <tbody>
+        <tr style="border-bottom: 1px solid lightgrey;" *ngFor="let order of orders">
+          <td>{{order.nameOrder}}</td>
+          <td class="text-center"></td>
+          <td class="text-center"></td>
+          <td class="text-right">{{order.totalOrder}}<a class="currency"> EUR</a></td>
 
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <strong>Sus productos</strong>
-                </div>
-                <div class="panel-body">
-                    <div class="table-responsive">
-                        <table class="table table-condensed">
-                            <tbody>
-                                <tr style="border-bottom: 1px solid lightgrey;" *ngFor="let order of orders">
-                                    <td>{{order.nameOrder}}</td>
-                                    <td class="text-center"></td>
-                                    <td class="text-center"></td>
-                                    <td class="text-right">{{order.totalOrder}}<a class="currency"> EUR</a></td>
-                                    
-                                </tr>
-                                <tr style="border-bottom: 2px solid lightgrey;">
-                                <tr>
-                                    <td class="highrow"><strong>Subtotal</strong></td>
-										<td class="highrow"></td>
-										<td class="highrow text-center"></td>
-										<td class="highrow text-right"><strong>{{orderToken.subtotal}}<a class="currency"> EUR</a></strong></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        
+        </tr>
+        <tr style="border-bottom: 2px solid lightgrey;">
+        <tr>
+          <td class="highrow"><strong>Subtotal</strong></td>
+          <td class="highrow"></td>
+          <td class="highrow text-center"></td>
+          <td class="highrow text-right"><strong>{{orderToken.subtotal}}<a class="currency"> EUR</a></strong></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

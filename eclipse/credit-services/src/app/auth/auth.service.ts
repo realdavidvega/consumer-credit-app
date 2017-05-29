@@ -27,6 +27,7 @@ export class AuthService {
     this.subject.next(true);
 
     this.onboardingService.setOnPayment();
+    this.onboardingService.setOnPersonCard();
     this.router.navigate(['/onboarding']);
   }
 
