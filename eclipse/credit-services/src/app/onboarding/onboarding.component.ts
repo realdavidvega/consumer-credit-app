@@ -20,20 +20,19 @@ export class OnboardingComponent implements OnInit {
     this.activations = this.onboardingService.getActivation();
 
     if(this.activations.onPerson) {
-      this.myWidth = 10;
+      this.myWidth = 20;
     }
-
     if (this.activations.onPayment) {
       this.myWidth = 40;
     }
     if (this.activations.onType) {
-      this.myWidth = 60;
+      this.myWidth = 50;
     }
     if (this.activations.onCalculation) {
       this.myWidth = 70;
     }
     if (this.activations.onIne) {
-      this.myWidth = 80;
+      this.myWidth = 90;
     }
     if (this.activations.onConfirm) {
       this.myWidth = 100;
@@ -43,19 +42,19 @@ export class OnboardingComponent implements OnInit {
       this.activations = data;
 
       if(this.activations.onPerson) {
-        this.myWidth = 30;
+        this.myWidth = 20;
       }
       if (this.activations.onPayment) {
         this.myWidth = 40;
       }
       if (this.activations.onType) {
-        this.myWidth = 60;
+        this.myWidth = 50;
       }
       if (this.activations.onCalculation) {
         this.myWidth = 70;
       }
       if (this.activations.onIne) {
-        this.myWidth = 80;
+        this.myWidth = 90;
       }
       if (this.activations.onConfirm) {
         this.myWidth = 100;
@@ -71,15 +70,14 @@ export class OnboardingComponent implements OnInit {
       this.onboardingService.setOnPayment();
     });
 
-    //this.alertTimeout();
+    this.alertTimeout();
   }
 
-  /*
   alertTimeout() {
     setTimeout(() => {
       this.registered = true;
     }, 3000);
   }
-  */
+
 
 }

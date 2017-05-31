@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {OnboardingService} from "../onboarding.service";
+import {Tarjeta} from "../tarjeta";
+import {OrderToken} from "../../home/order/ordertoken";
+import {OrderService} from "../../home/order/order.service";
 
 @Component({
   selector: 'app-on-confirm',
@@ -7,9 +11,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OnConfirmComponent implements OnInit {
 
-  constructor() { }
+  tarjeta: Tarjeta;
+  orderToken: OrderToken;
+
+  constructor(private onboardingService: OnboardingService, private orderService: OrderService) { }
 
   ngOnInit() {
+    this.onboardingService.getPayment().subscribe((tarjeta: Tarjeta) => this.tarjeta = tarjeta);
+
+    this.orderToken = this.orderService.getOrderToken();
+    this.orderService.tokenChanged.subscribe(
+      (token: OrderToken) => this.orderToken = token
+    );
+
   }
 
 }

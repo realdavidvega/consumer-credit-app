@@ -7,7 +7,7 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-xs-12">
-            <alert class="fade" *ngIf="activations.onPerson" type="success" [ngClass]="{'fade-in': !registered}">
+            <alert *ngIf="activations.onPerson" type="success" [hidden]="registered">
               <strong>¡Bien!</strong> Se ha registrado correctamente.
             </alert>
           </div>
@@ -57,18 +57,3 @@
     </div>
   </div>
 </div>
-
-<style>
-  .fade {
-    opacity: 0;
-    -webkit-transition: opacity 0.15s linear;
-    -moz-transition: opacity 0.15s linear;
-    -o-transition: opacity 0.15s linear;
-    transition: opacity 0.15s linear;
-  }
-  .fade-in {
-    opacity: 1;
-  }
-
-</style>
-
