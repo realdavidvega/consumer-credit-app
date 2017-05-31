@@ -15,7 +15,7 @@ export class OnIneComponent implements OnInit {
 
   onNext(){
     this.onboardingService.setOnIne();
-    this.onboardingService.setOnCalculation();
+    this.onboardingService.setOnConfirm();
 
   }
 

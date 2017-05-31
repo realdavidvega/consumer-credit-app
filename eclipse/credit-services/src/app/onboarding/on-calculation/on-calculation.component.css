@@ -1,7 +1,5 @@
-#red-slider .md-thumb:after, #red-slider .md-track-fill{
-  background-color: greenyellow !important;
-  border-color: greenyellow !important;
-}
-#red-slider .md-focus-thumb, #red-slider .md-focus-ring{
-  background-color: greenyellow;
+.currency {
+  font-size: 12px;
+  color: black;
+  text-decoration: none;
 }

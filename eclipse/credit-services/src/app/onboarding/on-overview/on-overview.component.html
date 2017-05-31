@@ -10,7 +10,7 @@
           <td>{{order.nameOrder}}</td>
           <td class="text-center"></td>
           <td class="text-center"></td>
-          <td class="text-right">{{order.totalOrder}}<a class="currency"> EUR</a></td>
+          <td class="text-right">{{order.totalOrder | currency:'EUR':true:'1.2-2'}}</td>
 
         </tr>
         <tr style="border-bottom: 2px solid lightgrey;">
@@ -18,7 +18,7 @@
           <td class="highrow"><strong>Subtotal</strong></td>
           <td class="highrow"></td>
           <td class="highrow text-center"></td>
-          <td class="highrow text-right"><strong>{{orderToken.subtotal}}<a class="currency"> EUR</a></strong></td>
+          <td class="highrow text-right"><strong>{{orderToken.subtotal | currency:'EUR':true:'1.2-2'}}</strong></td>
         </tr>
         </tbody>
       </table>

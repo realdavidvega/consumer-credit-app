@@ -2,39 +2,49 @@
   <div class="panel-heading"><b>Calcule su cuota mensual</b></div>
   <div class="panel-body">
     <div class="credit-card-div">
-        <div class="row">
-          <div class="col-md-12 col-sm-12 col-xs-12">
-            <h5>¿En cuánto tiempo quieres pagarlo?</h5>
-          </div>
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-              <md-slider id="red-slider" min="1" max="12" step="1" [value]="value" tickInterval="auto" style="width: 500px; cursor: pointer;"></md-slider>
-              {{value}} Meses
-            </div>
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <h4><b>¿En cuánto tiempo quieres pagarlo?</b></h4>
         </div>
-        <div class="row ">
-          <div class="col-md-3 col-sm-3 col-xs-6 pad-adjust">
-            <h5>Así son tus condiciones de pago</h5>
-            Importe: 10.000$
-          </div>
-          <div class="col-md-3 col-sm-3 col-xs-6 pad-adjust">
-            <h5>Año caducidad</h5>
-            Plazo: 6 meses
-          </div>
-          <div class="col-md-3 col-sm-3 col-xs-6 pad-adjust">
-            <h5>Cuota</h5>
-            419$/mes
-          </div>
-          <div class="col-md-3 col-sm-3 col-xs-3 pad-adjust">
-            Comsiones: 0$
-          </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <md-slider id="red-slider" min="1" max="12" step="1" [(ngModel)]="value" tickInterval="auto"
+                     style="width: 80%;" (ngModelChange)="calcularCondiciones()"></md-slider>
+          <b>{{value}} Meses</b>
         </div>
-        <div class="row ">
-          <div class="col-md-6 col-sm-6 col-xs-6 pad-adjust text-center">
-          </div>
-          <div class="col-md-6 col-sm-6 col-xs-6 pad-adjust text-center">
-            <button type="submit" class="btn btn-primary">Siguiente</button>
-          </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-adjust">
+          <h4><b>Así son tus condiciones de pago</b></h4>
         </div>
+        <div class="col-lg-2 col-md-3 col-sm-3 col-xs-6">
+          <h5><b>Importe</b></h5>
+          {{orderToken.subtotal | currency:'EUR':true:'1.2-2'}}
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-3 col-xs-6">
+          <h5><b>Plazos</b></h5>
+          {{value}} Meses
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+          <h5><b>Cuota</b></h5>
+          {{condiciones | currency:'EUR':true:'1.2-2'}} / mes
+          <p><a class="currency">Desde tipo interés nominal 5,95% (6,11% TAE)*</a></p>
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-3 col-xs-6">
+          <h5><b>Comisiones</b></h5>
+          {{0 | currency:'EUR':true:'1.2-2'}}
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+          <h5><b>Vencimiento</b></h5>
+          {{startDate | date: 'dd/MM/yyyy'}}
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-offset-6 col-md-6 col-sm-6 col-xs-6 pad-adjust text-center">
+          <button (click)="onNext()" type="submit" class="btn btn-primary">Siguiente</button>
+        </div>
+      </div>
     </div>
   </div>
 </div>

@@ -4,6 +4,6 @@
 			</div>
 
 			<div class="col-lg-4 pull-right">
-			  <i class="glyphicon glyphicon-shopping-cart"></i><b> {{orderToken.total}}<a class="currency"> EUR</a></b>
+			  <i class="glyphicon glyphicon-shopping-cart"></i><b> {{orderToken.total | currency:'EUR':true:'1.2-2'}}</b>
 			</div>
 		</div>

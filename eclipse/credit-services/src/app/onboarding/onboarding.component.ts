@@ -21,33 +21,52 @@ export class OnboardingComponent implements OnInit {
 
     if(this.activations.onPerson) {
       this.myWidth = 10;
-    } else if (this.activations.onPayment) {
-      this.myWidth = 30;
+    }
+
+    if (this.activations.onPayment) {
+      this.myWidth = 40;
+    }
+    if (this.activations.onType) {
+      this.myWidth = 60;
+    }
+    if (this.activations.onCalculation) {
+      this.myWidth = 70;
+    }
+    if (this.activations.onIne) {
+      this.myWidth = 80;
+    }
+    if (this.activations.onConfirm) {
+      this.myWidth = 100;
     }
 
     this.onboardingService.getActivations().subscribe((data) => {
       this.activations = data;
 
       if(this.activations.onPerson) {
-        this.myWidth = 10;
-      } else if (this.activations.onPayment) {
         this.myWidth = 30;
-      } else if (this.activations.onType) {
-        this.myWidth = 50;
-      } else if (this.activations.onIne) {
+      }
+      if (this.activations.onPayment) {
+        this.myWidth = 40;
+      }
+      if (this.activations.onType) {
         this.myWidth = 60;
-      } else if (this.activations.onCalculation) {
+      }
+      if (this.activations.onCalculation) {
+        this.myWidth = 70;
+      }
+      if (this.activations.onIne) {
         this.myWidth = 80;
-      } else if (this.activations.onConfirm) {
+      }
+      if (this.activations.onConfirm) {
         this.myWidth = 100;
       }
     });
 
     this.onboardingService.getType().subscribe((data: any) => {
       if(data.type === 'credito'){
-        this.onboardingService.setOnCalculation();
+        this.onboardingService.setOnConfirm();
       } else if(data.type === 'aplazado'){
-        this.onboardingService.setOnIne();
+        this.onboardingService.setOnCalculation();
       }
       this.onboardingService.setOnPayment();
     });
