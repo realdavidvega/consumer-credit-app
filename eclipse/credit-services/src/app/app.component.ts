@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 
 import * as firebase from 'firebase';
+import {AuthService} from "./auth/auth.service";
 
 @Component({
   selector: 'app-root',
@@ -17,9 +18,11 @@ export class AppComponent implements OnInit {
       projectId: 'credit-services-8bfcc',
       storageBucket: 'credit-services-8bfcc.appspot.com',
       messagingSenderId: '351510165342'
-
     });
   }
+
+  constructor(private auth: AuthService){}
+
 }
 
 

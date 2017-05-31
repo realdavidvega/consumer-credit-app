@@ -1,0 +1,53 @@
+
+
+
+#myFooter .info{
+  color: #afb0b1;
+}
+
+#myFooter a {
+  color: #d2d1d1;
+}
+
+#myFooter a:hover,
+#myFooter a:focus {
+  color: white;
+}
+
+.vcenter {
+  display: flex;
+  align-items: center;
+}
+
+@media (min-width:768px) {
+  .navbar > .container {
+    text-align: center;
+  }
+  .navbar-header {
+    float: none;
+    display: inline-block;
+  }
+  .navbar-brand {
+    float: none;
+    display: inline-block;
+  }
+  .navbar .navbar-nav {
+    float: none;
+    display: inline-block;
+    clear: none;
+  }
+  .navbar .navbar-nav > li {
+    float: none;
+    display: inline-block;
+  }
+  .navbar .navbar-nav > li li {
+    text-align: left
+  }
+  /*add id of centerednav on the collapse or it won't work*/
+  .collapse.navbar-collapse#centerednav {
+    float: none;
+    display: inline-block!important;
+    width: auto;
+    clear: none;
+  }
+}

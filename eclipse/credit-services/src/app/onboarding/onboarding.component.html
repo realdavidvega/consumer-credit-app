@@ -14,19 +14,14 @@
         </div>
       </div>
       <div class="container-fluid">
-        <div class="row">
-          <div class="col-xs-12 col-md-12 col-lg-12">
             <div class="progress">
               <div class="progress-bar progress-bar-striped active" role="progressbar" [attr.aria-valuenow]="myWidth"
                    aria-valuemin="0" aria-valuemax="100" [style.width]="(myWidth/100)*100 + '%'">
                 {{myWidth}}%
               </div>
             </div>
-          </div>
-        </div>
       </div>
-      <hr>
-      <div class="row">
+      <div class="row" style="margin-bottom: 5px;">
         <div class="col-xs-12 col-md-8 col-lg-8 pull-left">
           <app-on-person [hidden]="!activations.onPerson"></app-on-person>
           <div class="row-fade"
@@ -57,3 +52,5 @@
     </div>
   </div>
 </div>
+
+
