@@ -1,14 +1,13 @@
+import {Order} from './order';
+import {OrderService} from './order.service';
+import {OrderToken} from './ordertoken';
+import {Http} from '@angular/http';
+import {Router, ActivatedRoute} from '@angular/router';
+import {FormArray, FormControl, Validators, FormBuilder, FormGroup} from '@angular/forms';
+import {Component, OnInit, OnDestroy, EventEmitter, Output} from '@angular/core';
+import {Subscription} from 'rxjs/Rx';
 
-import { Order } from './order';
-import { OrderService } from './order.service';
-import { OrderToken } from './ordertoken';
-import { Http } from '@angular/http';
-import { Router, ActivatedRoute } from '@angular/router';
-import { FormArray, FormControl, Validators, FormBuilder, FormGroup } from '@angular/forms';
-import { Component, OnInit, OnDestroy, EventEmitter, Output } from '@angular/core';
-import { Subscription } from 'rxjs/Rx';
-
-import { AuthHttp, JwtHelper } from 'angular2-jwt';
+import {AuthHttp, JwtHelper} from 'angular2-jwt';
 
 @Component({
   selector: 'app-order',
@@ -19,17 +18,15 @@ import { AuthHttp, JwtHelper } from 'angular2-jwt';
 export class OrderComponent implements OnInit {
 
   orderForm: FormGroup;
-  private subscription: Subscription;
   private order: Order;
   orders: Order[];
   orderToken: OrderToken;
   done = false;
 
   constructor(public router: Router,
-    public http: Http,
-    private route: ActivatedRoute,
-    private formBuilder: FormBuilder,
-    private orderService: OrderService) {
+              public http: Http,
+              private formBuilder: FormBuilder,
+              private orderService: OrderService) {
   }
 
   async initialOrders() {
@@ -89,7 +86,7 @@ export class OrderComponent implements OnInit {
   }
 
   private initForm() {
-   const idOrder = '';
+    const idOrder = '';
     const quantOrder = '';
     const nameOrder = '';
     const priceOrder = '';
@@ -100,10 +97,6 @@ export class OrderComponent implements OnInit {
       nameOrder: [nameOrder, Validators.required],
       priceOrder: [priceOrder, Validators.required]
     });
-  }
-
-  getOrder() {
-    return this.order;
   }
 
   deleteOrders() {

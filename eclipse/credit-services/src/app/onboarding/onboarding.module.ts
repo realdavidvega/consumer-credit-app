@@ -18,6 +18,7 @@ import { OnIneComponent } from './on-ine/on-ine.component';
 import {PdfViewerComponent} from "ng2-pdf-viewer";
 import { OnConfirmComponent } from './on-confirm/on-confirm.component';
 import { AlertModule } from "ngx-bootstrap";
+import {MdSliderModule} from "@angular/material";
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { AlertModule } from "ngx-bootstrap";
     FormsModule,
     onboardingRoutes,
     AuthModule,
-    AlertModule.forRoot()
+    AlertModule.forRoot(),
+    MdSliderModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
