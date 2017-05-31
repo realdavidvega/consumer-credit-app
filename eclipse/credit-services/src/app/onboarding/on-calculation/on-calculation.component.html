@@ -7,7 +7,7 @@
             <h5>¿En cuánto tiempo quieres pagarlo?</h5>
           </div>
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-              <md-slider id="red-slider" min="1" max="12" step="1" [attr.value]="value" tickInterval="auto" style="width: 500px;"></md-slider>
+              <md-slider id="red-slider" min="1" max="12" step="1" [value]="value" tickInterval="auto" style="width: 500px; cursor: pointer;"></md-slider>
               {{value}} Meses
             </div>
         </div>
@@ -38,17 +38,4 @@
     </div>
   </div>
 </div>
-
-<style>
-
-  #red-slider .md-thumb:after, #red-slider .md-track-fill{
-    background-color: greenyellow !important;
-    border-color: greenyellow !important;
-  }
-  #red-slider .md-focus-thumb, #red-slider .md-focus-ring{
-    background-color: greenyellow;
-  }
-
-</style>
-
 

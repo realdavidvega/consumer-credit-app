@@ -11,7 +11,7 @@ export class AuthService {
 
   user: User;
   subject = new Subject<boolean>();
-  registrado = new EventEmitter<boolean>();
+  registrado = false;
 
   constructor(private router: Router, private onboardingService: OnboardingService) {}
 
@@ -20,6 +20,7 @@ export class AuthService {
     this.subject.next(true);
 
     this.onboardingService.setOnPerson();
+    this.registrado = true;
     this.router.navigate(['/onboarding']);
   }
 
@@ -29,6 +30,7 @@ export class AuthService {
 
     this.onboardingService.setOnPayment();
     this.onboardingService.setOnPersonCard();
+    this.registrado = true;
     this.router.navigate(['/onboarding']);
   }
 
@@ -39,7 +41,12 @@ export class AuthService {
   logout() {
     sessionStorage.removeItem('user_token');
     this.subject.next(false);
+    this.registrado = false;
     this.router.navigate(['/login']);
+  }
+
+  getRegistrado() {
+    return this.registrado;
   }
 
 }
