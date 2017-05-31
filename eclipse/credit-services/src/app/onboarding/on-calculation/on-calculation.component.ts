@@ -47,6 +47,7 @@ export class OnCalculationComponent implements OnInit {
   onNext() {
     this.onboardingService.setOnCalculation();
     this.onboardingService.setOnIne();
+    this.onboardingService.setOnSignature();
   }
 
 

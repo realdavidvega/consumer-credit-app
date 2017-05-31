@@ -2,7 +2,6 @@
 import { OnboardingService } from './onboarding.service';
 import { Component, OnInit, OnChanges } from '@angular/core';
 
-
 @Component({
   selector: 'app-onboarding',
   templateUrl: './onboarding.component.html',
@@ -32,9 +31,12 @@ export class OnboardingComponent implements OnInit {
       this.myWidth = 70;
     }
     if (this.activations.onIne) {
-      this.myWidth = 90;
+      this.myWidth = 80;
     }
     if (this.activations.onConfirm) {
+      this.myWidth = 90;
+    }
+    if(this.activations.onFinish) {
       this.myWidth = 100;
     }
 
@@ -54,9 +56,12 @@ export class OnboardingComponent implements OnInit {
         this.myWidth = 70;
       }
       if (this.activations.onIne) {
-        this.myWidth = 90;
+        this.myWidth = 80;
       }
       if (this.activations.onConfirm) {
+        this.myWidth = 90;
+      }
+      if(this.activations.onFinish) {
         this.myWidth = 100;
       }
     });

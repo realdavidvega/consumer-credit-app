@@ -41,11 +41,17 @@
           <div class="row-fade">
             <app-on-confirm [hidden]="!activations.onConfirm"></app-on-confirm>
           </div>
+          <div class="row-fade">
+            <app-on-confirm [hidden]="!activations.onFinish"></app-on-confirm>
+          </div>
         </div>
-        <div class="col-xs-12 col-md-4 col-lg-4 pull-right">
+        <div class="col-xs-12 col-md-4 col-lg-4 pull-right" [hidden]="activations.onFinish || activations.onCancel">
           <app-on-overview></app-on-overview>
           <div class="row-fade">
             <app-on-person-card [hidden]="!activations.onPersonCard"></app-on-person-card>
+          </div>
+          <div class="row-fade">
+            <app-on-signature [hidden]="!activations.onSignature"></app-on-signature>
           </div>
         </div>
       </div>
