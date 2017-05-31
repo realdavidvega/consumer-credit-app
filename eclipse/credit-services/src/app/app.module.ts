@@ -15,6 +15,7 @@ import { OnboardingService } from './onboarding/onboarding.service';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {PaymentService} from "./onboarding/payment.service";
+import {MdSliderModule} from "@angular/material";
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import {PaymentService} from "./onboarding/payment.service";
     HomeModule,
     OnboardingModule,
     AuthModule,
-    routing
+    routing,
+    MdSliderModule
   ],
   providers: [
     AuthGuard,

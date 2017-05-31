@@ -1,7 +1,8 @@
-import { Order } from './order';
-import { OrderToken } from './ordertoken';
-import { Injectable, EventEmitter } from '@angular/core';
-import { Http, Headers, Response } from '@angular/http';
+import {Order} from './order';
+import {OrderToken} from './ordertoken';
+import {Injectable, EventEmitter} from '@angular/core';
+import {Token} from "./token";
+import {Cart} from "./cart";
 
 @Injectable()
 export class OrderService {
@@ -9,21 +10,17 @@ export class OrderService {
   tokenChanged = new EventEmitter<OrderToken>();
 
   private orders: Order[] = [];
-
-  private order: Order;
-
   sendedOrder = false;
-
   private orderToken: OrderToken;
 
-  constructor(private http: Http) { }
+  private token: Token;
+  private cart: Cart;
+
+  constructor() {
+  }
 
   getOrders() {
     return this.orders;
-  }
-
-  getOrder(id: number) {
-    return this.orders[id];
   }
 
   async addOrder(order: Order) {
@@ -67,10 +64,30 @@ export class OrderService {
     this.tokenChanged.emit(this.orderToken);
 
     this.sendedOrder = true;
+
+    this.generateToken();
   }
 
   getOrderToken() {
     return this.orderToken;
+  }
+
+  generateToken() {
+    this.cart = {
+      idCart: 7,
+      orders: this.orders
+    };
+
+    this.token = {
+      idSession: 123,
+      idUser: 2,
+      idPartner: 4,
+      card: this.cart
+    };
+
+
+
+
   }
 
 }
