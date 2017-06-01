@@ -1,3 +1,33 @@
-<p>
-  on-signature works!
-</p>
+<div class="panel panel-primary">
+  <div class="panel-heading"><i class="glyphicon glyphicon glyphicon-info-sign"></i>
+    <strong> Información de su crédito</strong>
+  </div>
+  <div class="panel-body">
+    <div class="table-responsive">
+      <table class="table table-condensed">
+        <tbody>
+        <tr>
+          <td>Mensualidades</td>
+          <td class="text-center"></td>
+          <td class="text-center"></td>
+          <td class="text-right">{{value}} {{mes}}</td>
+        </tr>
+        <tr style="border-bottom: 1px solid lightgrey;"></tr>
+        <tr>
+          <td>Cuota mensual</td>
+          <td class="text-center"></td>
+          <td class="text-center"></td>
+          <td class="text-right"> {{condiciones | currency:'EUR':true:'1.2-2'}} {{cuotaMes}}</td>
+        </tr>
+        <tr style="border-bottom: 1px solid lightgrey;"></tr>
+        <tr>
+          <td>Vencimiento</td>
+          <td class="text-center"></td>
+          <td class="text-center"></td>
+          <td class="text-right">{{startDate | date: 'dd/MM/yyyy'}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

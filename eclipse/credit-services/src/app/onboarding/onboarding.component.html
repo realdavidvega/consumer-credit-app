@@ -1,32 +1,68 @@
 <div class="container">
-	<div class="row">
-		<div class="col-xs-12">
-			<div class="text-center">
-				<i class="fa fa-search-plus pull-left icon"></i>
-				<h2>Onboarding - Secure Checkout</h2>
-			</div>
-			<hr>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="text-center">
+        <i class="fa fa-search-plus pull-left icon"></i>
+      </div>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-xs-12">
+            <alert *ngIf="activations.onPerson" type="success" [hidden]="registered">
+              <strong>¡Bien!</strong> Se ha registrado correctamente.
+            </alert>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid">
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped active" role="progressbar" [attr.aria-valuenow]="myWidth"
+                   aria-valuemin="0" aria-valuemax="100" [style.width]="(myWidth/100)*100 + '%'">
+                {{myWidth}}%
+              </div>
+            </div>
+      </div>
+      <div class="row" style="margin-bottom: 5px;" [hidden]="activations.onFinish || activations.onCancel">
+        <div class="col-xs-12 col-md-8 col-lg-8 pull-left">
+          <app-on-person [hidden]="!activations.onPerson"></app-on-person>
+          <div class="row-fade"
+               [ngClass]="{'row-semifaded': activations.onType}">
+            <app-on-payment [hidden]="!activations.onPayment"></app-on-payment>
+          </div>
+          <div class="row-fade"
+               [ngClass]="{'row-semifaded': !activations.onType}">
+            <app-on-type [hidden]="!activations.onPayment"></app-on-type>
+          </div>
+          <div class="row-fade">
+            <app-on-ine [hidden]="!activations.onIne"></app-on-ine>
+          </div>
+          <div class="row-fade">
+            <app-on-calculation [hidden]="!activations.onCalculation"></app-on-calculation>
+          </div>
+          <div class="row-fade">
+            <app-on-confirm [hidden]="!activations.onConfirm"></app-on-confirm>
+          </div>
+          <div class="row-fade">
+            <app-on-confirm [hidden]="!activations.onFinish"></app-on-confirm>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-4 col-lg-4 pull-right">
+          <app-on-overview></app-on-overview>
+          <div class="row-fade">
+            <app-on-person-card [hidden]="!activations.onPersonCard"></app-on-person-card>
+          </div>
+          <div class="row-fade">
+            <app-on-signature [hidden]="!activations.onSignature"></app-on-signature>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-bottom: 5px;" [hidden]="!activations.onFinish">
+        <div class="col-lg-12">
+          <app-on-finish></app-on-finish>
+        </div>
 
-			<div class="row">
-				<app-on-person [hidden]="activations.onPerson"></app-on-person>
-			
-				<div class="row-fade"
-					[ngClass]="{'row-semifaded': activations.onPayment}">
-					<app-on-overview></app-on-overview>
-					<app-on-payment [hidden]="!activations.onPerson"></app-on-payment>
-				</div>
-
-				<div class="row-fade" [hidden]="!activations.onPerson"
-					[ngClass]="{'row-semifaded': !activations.onType}">
-					<app-on-type></app-on-type>
-				</div>
-			</div>
-			<div class="row row-fade"
-				[ngClass]="{'row-faded': !activations.onSignature}">
-				<app-on-person-card></app-on-person-card>
-			</div>
-		</div>
-	</div>
+      </div>
+    </div>
+  </div>
 </div>
 
 

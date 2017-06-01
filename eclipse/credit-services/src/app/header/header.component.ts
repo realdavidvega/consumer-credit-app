@@ -1,5 +1,7 @@
-import { AuthService } from '../auth.service';
+
+import { AuthService } from '../auth/auth.service';
 import { Component, OnInit } from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-header',
@@ -8,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private auth: AuthService) {}
+  isAuth: boolean;
+
+  constructor(public auth: AuthService) {}
 
   ngOnInit() {
+    this.auth.isAuthenticated().subscribe((flag: boolean) => {
+      this.isAuth = flag;
+  });
   }
 
 }

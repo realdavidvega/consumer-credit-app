@@ -2,18 +2,12 @@
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <a class="navbar-brand">Credit Services</a>
+      <a class="navbar-brand">LoanPlatform</a>
     </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><a [routerLink]="['/home']" (click)="auth.login()" *ngIf="!auth.authenticated()">Login</a></li>
-        <li><a [routerLink]="['/order']" *ngIf="auth.authenticated()">Order</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a [routerLink]="" (click)="auth.logout()" *ngIf="auth.authenticated()">Logout</a></li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+  <form class="navbar-form navbar-right" role="search">
+    <button class="btn btn-danger" *ngIf="isAuth" (click)="auth.logout()" [routerLink]="['/login']">Cancelar pago</button>
+  </form>
+  </div>
+
 </nav>

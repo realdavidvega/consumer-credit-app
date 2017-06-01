@@ -1,0 +1,34 @@
+
+<div class="container text-center">
+	<h3>¡Bienvenido a LoanPlatform!</h3>
+	<h4>La forma más rápida e inteligente de realizar tus pagos.</h4>
+</div>
+
+<div class="modal-dialog">
+	<div class="registermodal-container">
+		<hr>
+			<app-auth-overview></app-auth-overview>
+		<hr>
+		<h3 style="color: grey;">Autenticarse en LoanPlatform</h3>
+		<form [formGroup]="myForm" (ngSubmit)="onSignin()">
+			<div class="form-group">
+				<input formControlName="email" type="email" id="email"
+					class="form-control" placeholder="Email">
+			</div>
+			<div class="form-group">
+				<input formControlName="password" type="password" id="password"
+					class="form-control" placeholder="Contraseña">
+			</div>
+			<button type="submit" [disabled]="!myForm.valid"
+				class="btn btn-block btn-primary">Autenticarse</button>
+			<hr>
+			<div class="text-center">
+				¿Todavía no tienes una cuenta? <a [routerLink]="['/register']"
+					style="cursor: pointer">Registrarse</a>
+			</div>
+
+		</form>
+
+	</div>
+</div>
+

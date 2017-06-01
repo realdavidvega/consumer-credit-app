@@ -1,10 +1,11 @@
 import { homeRoutes } from './home.routes';
 import { OrderComponent } from './order/order.component';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HomeComponent } from './home.component';
 import { OrderItemComponent } from './order/order-item/order-item.component';
+import { MaterialModule } from '@angular/material';
 
 
 @NgModule({
@@ -15,10 +16,12 @@ import { OrderItemComponent } from './order/order-item/order-item.component';
   ],
   imports: [
     CommonModule,
+    MaterialModule,
     ReactiveFormsModule,
     FormsModule,
     homeRoutes
-  ]
+  ],
+  schemas : [CUSTOM_ELEMENTS_SCHEMA]
 })
 
 export class HomeModule {}

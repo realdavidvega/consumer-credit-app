@@ -1,87 +1,92 @@
-
-<div class="col-xs-12 col-md-8 col-lg-8 pull-left">
-	<div class="panel panel-default height">
-		<div class="panel-heading"><b>Introduzca los datos de su tarjeta </b></div>
-		<div class="panel-body">	
-		<div class="credit-card-div">
-                    
-
-                        <div class="row">
-                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                <h5 class="text-muted">Número de tarjeta</h5>
-                            </div>
-                            <div class="input-group">
-                            <div class="col-md-3 col-sm-3 col-xs-3 pad-adjust">
-                                <input type="text" maxlength="4" class="form-control" placeholder="0000" />
-                            </div>
-                            <div class="col-md-3 col-sm-3 col-xs-3 pad-adjust">
-                                <input type="text" maxlength="4" class="form-control" placeholder="0000" />
-                            </div>
-                            <div class="col-md-3 col-sm-3 col-xs-3 pad-adjust">
-                                <input type="text" maxlength="4" class="form-control" placeholder="0000" />
-                            </div>
-                            <div class="col-md-3 col-sm-3 col-xs-3 pad-adjust">
-                                <input type="text" maxlength="4" class="form-control" placeholder="0000" />
-                            </div>
-                            </div>
-                        </div>
-                        <div class="row ">
-                            <div class="col-md-3 col-sm-3 col-xs-6 pad-adjust">
-                                <h5 class="text-muted">Mes caducidad</h5>
-                                <select class="form-control" name="cc_exp_mo">
-                                <option value="01">Enero</option>
-                                <option value="02">Febrero</option>
-                                <option value="03">Marzo</option>
-                                <option value="04">Abril</option>
-                                <option value="05">Mayo</option>
-                                <option value="06">Junio</option>
-                                <option value="07">Julio</option>
-                                <option value="08">Agosto</option>
-                                <option value="09">Septiembre</option>
-                                <option value="10">Octubre</option>
-                                <option value="11">Noviembre</option>
-                                <option value="12">Diciembre</option>
-                            </select>
-                            </div>
-                            <div class="col-md-3 col-sm-3 col-xs-6 pad-adjust">
-                               <h5 class="text-muted">Año caducidad</h5>
-                                <select class="form-control" name="cc_exp_yr">
-                                <option>2017</option>
-                                <option>2018</option>
-                                <option>2019</option>
-                                <option>2020</option>
-                                <option>2021</option>
-                                <option>2022</option>
-                                <option>2023</option>
-                                <option>2024</option>
-                                <option>2025</option>
-                            </select>
-                            </div>
-                            <div class="col-md-3 col-sm-3 col-xs-6 pad-adjust">
-                                <h5 class="text-muted">CCV</h5>
-                                <input type="text" maxlength="3" class="form-control" placeholder="CCV" />
-                            </div>
-                            <div class="col-md-3 col-sm-3 col-xs-3 pad-adjust">
-                                <img src="data:image/png;base64,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" class="img-rounded" />
-                            </div>
-                        </div>
-                        <div class="row ">
-                            <div class="col-md-6 col-sm-6 col-xs-12 pad-adjust">
-                            	<h5 class="text-muted">Nombre del portador</h5>
-                                <input type="text" maxlength="50" class="form-control" placeholder="Nombre y apellidos" />
-                            </div>
-                        </div>
-                        <div class="row ">
-                            <div class="col-md-6 col-sm-6 col-xs-6 pad-adjust text-center">
-                                <button type="submit" class="btn btn-danger">Cancelar</button>
-                            </div>
-                            <div class="col-md-6 col-sm-6 col-xs-6 pad-adjust text-center">
-                                <button (click)="onNext()" type="submit" class="btn btn-primary">Siguiente</button>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
+<div class="panel panel-primary height">
+  <div class="panel-heading"><b>Introduzca los datos de su tarjeta</b></div>
+  <div class="panel-body">
+    <div class="credit-card-div">
+      <form [formGroup]="myForm">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <h5>Número de tarjeta</h5>
+          </div>
+          <div class="input-group">
+            <div class="col-md-3 col-sm-3 col-xs-6 pad-adjust">
+              <input type="text" maxlength="4" class="form-control" placeholder="0000"
+                     onkeyup="if (this.value.length == this.getAttribute('maxlength')) card2.focus()"
+                     formControlName="card1">
             </div>
-		</div>
-		
+            <div class="col-md-3 col-sm-3 col-xs-6 pad-adjust">
+              <input type="text" maxlength="4" class="form-control" placeholder="0000" id="card2"
+                     onkeyup="if (this.value.length == this.getAttribute('maxlength')) card3.focus()"
+                     formControlName="card2">
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-6 pad-adjust">
+              <input type="text" maxlength="4" class="form-control" placeholder="0000" id="card3"
+                     onkeyup="if (this.value.length == this.getAttribute('maxlength')) card4.focus()"
+                     formControlName="card3">
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-6 pad-adjust">
+              <input type="text" maxlength="4" class="form-control" placeholder="0000" id="card4"
+                     formControlName="card4">
+            </div>
+          </div>
+        </div>
+        <div class="row ">
+          <div class="col-md-3 col-sm-3 col-xs-6 pad-adjust">
+            <h5>Mes caducidad</h5>
+            <select class="form-control" name="cc_exp_mo" formControlName="month">
+              <option value="01">Enero</option>
+              <option value="02">Febrero</option>
+              <option value="03">Marzo</option>
+              <option value="04">Abril</option>
+              <option value="05">Mayo</option>
+              <option value="06">Junio</option>
+              <option value="07">Julio</option>
+              <option value="08">Agosto</option>
+              <option value="09">Septiembre</option>
+              <option value="10">Octubre</option>
+              <option value="11">Noviembre</option>
+              <option value="12">Diciembre</option>
+            </select>
+          </div>
+          <div class="col-md-3 col-sm-3 col-xs-6 pad-adjust">
+            <h5>Año caducidad</h5>
+            <select class="form-control" name="cc_exp_yr" formControlName="year">
+              <option>2017</option>
+              <option>2018</option>
+              <option>2019</option>
+              <option>2020</option>
+              <option>2021</option>
+              <option>2022</option>
+              <option>2023</option>
+              <option>2024</option>
+              <option>2025</option>
+            </select>
+          </div>
+          <div class="col-md-3 col-sm-3 col-xs-6 pad-adjust">
+            <h5>CCV</h5>
+            <input type="text" maxlength="3" class="form-control" placeholder="CVV" formControlName="cvv">
+          </div>
+          <div class="col-md-3 col-sm-3 col-xs-3 pad-adjust">
+            <img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAGp0lEQVR4nO1YPY8cxxF9NdOzPbN7JG/PkuiA9gVHGDBlKiVghfoFBMhAkAAJzvkrqIgBI8b8AWcSTu3YBgQJJmRDDkQ4smgTMAjwyL3jzs7OTD8HM/01O3c8wwKsYBt7d9XV1VWvPrq694Dt2I7t2I7t+B+GjDHv3Lkzyv+hBgkA/K/2PHjwYHRDBPT+/fs70+n0o7Zt94ZrPySYt+1h/AsAUFXV8unTp38yxvz74cOHteU7kPfu3du5efPm7w8ODn49bnTc4BiYIY+e+db1Ifhw7dmzZ3+/e/fux+v1+q+Hh4ctACRWyWw2++jq1asfioh1SgBID1w8XyRcE4H0PDh56dcDPYhoxvpp6cBuB15AT1+58rNfXP/gg0/atr1gcSsAuHXrlrx8+XLv22//5jyO/oL202XCRiv4Sytg5y7iRLeFG3T3octI70yvi4E9z3v96tVPARQAXjkH6rrGP75/Jr99/Dta46TxtOE4P5wbgrRyXsYYkjRWPtAZ6fEyvS3TzQPdnTxEEoi4ylEAYAxBY0BjJFAoxhsVD9DJxHPTy8UypKGQBoZu3YKX03U48B2GQF7SNOouyqUZgDEmjGxAuyjARNEP5MzIvjEeebqdc8inSRIcOecArCADBXGKzUgZ2MiaQO6U1EfrfTbN0NY55BNyLAPdgTWuhIYp7tPqyyQ0LN6AES8/VipDPW8rrU15UgFjDhD9wTEj5WMBm8F8JPVRiZmhntPLzZxTfnjnKABI0xQCAVtjS8BG5qxOE5TXRtmRNF1ziOXPLJXzym84kGUZ3n//Gj77/HMJrr7+Yulp3/gtHyQIUHopS7MrU1qRsb3sL6mOZqzDsXuZTk0nc3h4iCdPnsQOKKWgtcZ8dxcWXHi4Y1rcejj3YnbNFqY/Y26VMX+MdnYZaCGgdb6ZgQCgC3pABnCs5ghMOGfAxBjtyVA8pulv9ci94QMvcoD+HYKyLKmyTKwjXSqHtHNZGKSZfdkg5o3Q3TuoD1Wnc8Dv3kGEUoqz6Uxi6BsZcKAgItCTie8GPiv9T/BeCeZdMvp5B8IlKJyTXt+yLGHaFoad3SRJ0DQNRARN0yDLMiiVubfW0Im4hHxoYYyNle0MDjQHoBk44mNqQdPFGX7J6/z6q69AGs5mO3j+/Dn29/e5WCxwdHSE+XzOX12/Dq21K+ngsG060D9rbVsbpN4BlCDSXQl5ZNIDdpdRXCpdCfUGhCB+ee0aiyKXqlrj5/v7nM2mcvTyCAdXD1gUUymKwqbvbSXUeWBHWZa9w4OuEnQXf37DMtuU88/hsNQ6O3t7c4BAnueutN67fDnSkSRJv+8UB1zH6tFOtB7tEiGWMzvImT1mnLHReYKPTXjUk+IMuAUJwi7BUnDRdJdU0CGHF0/PcyBHad+pQAxo38tt2TC8HMccsOk/X5+OW3K4yUVvM7phhs6INEZFguWBB4Mz4KN5fHwiIoLWtBSIJEkCY1oaUnKdI8syLMsl26YVQ4NpMeXxybEkSUIAorXGJJtwtVpJ/55n27aSJAmatqX02djZ2WHTNFIuSxhjmKpUQKBpW2ZKSdO2mM1mYZZOdyA8eOt6japaI89zqDTFqlphkk2wWpVdWwNRVWu0bYu6rrFYHENrjbouoXUOkRqZylCtK5ycvEGWZUiSBAJAZRnW6zWKogAJNE2LumlgTIuT5RIgkaYK1IRSCj6HZ5UQwmwTaap48aLGalVB5ZokofUEVVUxTVKARJYpiICZUpjOpnj9esFLly5huSyZZQoEMckm/MmeRtM0WNdrpkkKYwzqumaSJNCTCZRKaYyB1jmmxZQEUa0qZJlimqa2A4110fD7APp7oBO+eOGCAERRFAQh3c0Mzudzd4h7Y+7ZsLt7SUBQ69y9RidaC0CoLGNe5E52Z2fm7plEEpnP574RgJhMdNcw6A6OhIdtMwNBrx4cUkcHh3GT9ufUZ9odu4DnT2NUGvRG3N6hPEfSEL2FHOABmNPoMSfCWnUQzgC36VgMOHYUwMADBQBN06Cumyp48Yx0zY3Lyje/UzrjWFsMnBksB33SOxj40FGtaWsAJnLg0aNH3N3d/fLFixf/eufdd67A1pxXJ4ESGQCOL7JxnsUngcsSAB7Ie1vuawkpi8Xi5Ol33/0ZwDJyAADKsvznF1/c/fTGjRu/yfP8MoHUp4yeHPA2pxzlbZbA+XiWs16vy798880f37x58wcAJ1Ys+hf67du3M2PMLoALCP7x+yMZDYAFgNePHz9u/99gtmM7tmM7tuPHMf4DjEOG/uidi0QAAAAASUVORK5CYII="
+              class="img-rounded">
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-12 pad-adjust">
+            <h5>Nombre del portador</h5>
+            <input type="text" maxlength="50" class="form-control" placeholder="Nombre y apellidos"
+                   formControlName="name">
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-md-offset-6 col-md-6 col-sm-6 col-xs-6 pad-adjust text-center">
+            <button [disabled]="!myForm.valid" (click)="onNext()" (click)="submitForm()" type="submit"
+                    class="btn btn-primary">Siguiente
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+

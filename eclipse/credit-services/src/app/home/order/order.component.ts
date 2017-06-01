@@ -1,14 +1,13 @@
+import {Order} from './order';
+import {OrderService} from './order.service';
+import {OrderToken} from './ordertoken';
+import {Http} from '@angular/http';
+import {Router, ActivatedRoute} from '@angular/router';
+import {FormArray, FormControl, Validators, FormBuilder, FormGroup} from '@angular/forms';
+import {Component, OnInit, OnDestroy, EventEmitter, Output} from '@angular/core';
+import {Subscription} from 'rxjs/Rx';
 
-import { Order } from './order';
-import { OrderService } from './order.service';
-import { OrderToken } from './ordertoken';
-import { Http } from '@angular/http';
-import { Router, ActivatedRoute } from '@angular/router';
-import { FormArray, FormControl, Validators, FormBuilder, FormGroup } from '@angular/forms';
-import { Component, OnInit, OnDestroy, EventEmitter, Output } from '@angular/core';
-import { Subscription } from 'rxjs/Rx';
-
-import { AuthHttp, JwtHelper } from 'angular2-jwt';
+import {AuthHttp, JwtHelper} from 'angular2-jwt';
 
 @Component({
   selector: 'app-order',
@@ -19,18 +18,15 @@ import { AuthHttp, JwtHelper } from 'angular2-jwt';
 export class OrderComponent implements OnInit {
 
   orderForm: FormGroup;
-  private subscription: Subscription;
   private order: Order;
   orders: Order[];
   orderToken: OrderToken;
   done = false;
 
   constructor(public router: Router,
-    public http: Http,
-    public authHttp: AuthHttp,
-    private route: ActivatedRoute,
-    private formBuilder: FormBuilder,
-    private orderService: OrderService) {
+              public http: Http,
+              private formBuilder: FormBuilder,
+              private orderService: OrderService) {
   }
 
   async initialOrders() {
@@ -38,21 +34,16 @@ export class OrderComponent implements OnInit {
       idOrder: 1,
       quantOrder: 1,
       nameOrder: 'iPhone 7',
-      imageOrder: 'null',
       priceOrder: 900,
-      totalOrder: null,
-      precioEnvio: 5
-
+      totalOrder: null
     };
 
     const newOrder2 = {
       idOrder: 1,
-      quantOrder: 2,
+      quantOrder: 1,
       nameOrder: 'MacBook Pro 15"',
-      imageOrder: 'null',
-      priceOrder: 900,
-      totalOrder: null,
-      precioEnvio: 5
+      priceOrder: 1800,
+      totalOrder: null
 
     };
 
@@ -62,6 +53,7 @@ export class OrderComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.deleteOrders();
 
     this.initialOrders();
     this.initForm();
@@ -83,11 +75,10 @@ export class OrderComponent implements OnInit {
 
     this.orderService.addOrder(newOrder);
     this.done = true;
-
   }
 
   onSendToken() {
-    this.router.navigate(['/onboarding']);
+    this.router.navigate(['/login']);
   }
 
   onClear() {
@@ -95,25 +86,17 @@ export class OrderComponent implements OnInit {
   }
 
   private initForm() {
-   const idOrder = '';
+    const idOrder = '';
     const quantOrder = '';
     const nameOrder = '';
-    const imageOrder = '';
     const priceOrder = '';
-    const precioEnvio = '';
 
     this.orderForm = this.formBuilder.group({
       idOrder: [idOrder, Validators.required],
       quantOrder: [quantOrder, Validators.required],
       nameOrder: [nameOrder, Validators.required],
-      imageOrder: [imageOrder, Validators.required],
-      priceOrder: [priceOrder, Validators.required],
-      precioEnvio: [precioEnvio,  Validators.required]
+      priceOrder: [priceOrder, Validators.required]
     });
-  }
-
-  getOrder() {
-    return this.order;
   }
 
   deleteOrders() {

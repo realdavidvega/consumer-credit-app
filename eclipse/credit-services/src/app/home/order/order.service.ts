@@ -1,10 +1,8 @@
-import { Order } from './order';
-import { OrderToken } from './ordertoken';
-import { Injectable, EventEmitter } from '@angular/core';
-import { Http, Headers, Response } from '@angular/http';
-
-import { AngularFire, AngularFireDatabase } from 'angularfire2';
-
+import {Order} from './order';
+import {OrderToken} from './ordertoken';
+import {Injectable, EventEmitter} from '@angular/core';
+import {Token} from "./token";
+import {Cart} from "./cart";
 
 @Injectable()
 export class OrderService {
@@ -12,19 +10,17 @@ export class OrderService {
   tokenChanged = new EventEmitter<OrderToken>();
 
   private orders: Order[] = [];
-
-  private order: Order;
-
+  sendedOrder = false;
   private orderToken: OrderToken;
 
-  constructor(private http: Http, private af: AngularFire) { }
+  private token: Token;
+  private cart: Cart;
+
+  constructor() {
+  }
 
   getOrders() {
     return this.orders;
-  }
-
-  getOrder(id: number) {
-    return this.orders[id];
   }
 
   async addOrder(order: Order) {
@@ -43,7 +39,6 @@ export class OrderService {
     this.ordersChanged.emit(this.orders);
     this.orderToken = {
       order: null,
-      send: 0,
       subtotal: 0,
       total: 0
     };
@@ -52,27 +47,47 @@ export class OrderService {
 
   createOrderToken() {
     let subtotal = 0;
-    let send = 0;
 
     for (let i = 0; i < this.orders.length; i++) {
       subtotal = subtotal + this.orders[i].totalOrder;
-      send = send + this.orders[i].precioEnvio;
     }
 
-    const total = subtotal + send;
+    const total = subtotal;
 
     this.orderToken = {
       order: this.orders,
       subtotal: subtotal,
-      send: send,
+
       total: total
     };
 
     this.tokenChanged.emit(this.orderToken);
+
+    this.sendedOrder = true;
+
+    this.generateToken();
   }
 
   getOrderToken() {
     return this.orderToken;
+  }
+
+  generateToken() {
+    this.cart = {
+      idCart: 7,
+      orders: this.orders
+    };
+
+    this.token = {
+      idSession: 123,
+      idUser: 2,
+      idPartner: 4,
+      card: this.cart
+    };
+
+
+
+
   }
 
 }
