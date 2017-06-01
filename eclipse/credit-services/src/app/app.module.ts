@@ -16,11 +16,13 @@ import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {PaymentService} from "./onboarding/payment.service";
 import {MdSliderModule} from "@angular/material";
+import {OnCancelComponent} from "./onboarding/on-cancel/on-cancel.component";
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    OnCancelComponent
   ],
   imports: [
     CommonModule,

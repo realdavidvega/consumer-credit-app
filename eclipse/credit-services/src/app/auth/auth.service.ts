@@ -41,8 +41,7 @@ export class AuthService {
   logout() {
     sessionStorage.removeItem('user_token');
     this.subject.next(false);
-    this.registrado = false;
-    this.router.navigate(['/login']);
+    this.router.navigate(['/cancel']);
   }
 
   getRegistrado() {
