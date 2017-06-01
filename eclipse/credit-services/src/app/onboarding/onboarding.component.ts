@@ -78,7 +78,7 @@ export class OnboardingComponent implements OnInit {
       token: this.orderToken.subtotal,
       startDate: new Date(),
       condiciones: 0,
-      value: 1
+      value: 0
     }
 
     this.onboardingService.getType().subscribe((data: any) => {

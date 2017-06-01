@@ -33,6 +33,8 @@
               {{startDate | date: 'dd/MM/yyyy'}}
             </div>
           </div>
+          <hr [hidden]="!mostrar">
+          <p [hidden]="!mostrar">Se le cobrará cada mes {{condiciones | currency:'EUR':true:'1.2-2'}} hasta la fecha de vencimiento.</p>
           <hr>
           <button class="btn btn-primary" [routerLink]="['/order']">Finalizar</button>
         </div>

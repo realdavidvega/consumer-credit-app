@@ -21,7 +21,7 @@
               </div>
             </div>
       </div>
-      <div class="row" style="margin-bottom: 5px;">
+      <div class="row" style="margin-bottom: 5px;" [hidden]="activations.onFinish || activations.onCancel">
         <div class="col-xs-12 col-md-8 col-lg-8 pull-left">
           <app-on-person [hidden]="!activations.onPerson"></app-on-person>
           <div class="row-fade"
@@ -45,7 +45,7 @@
             <app-on-confirm [hidden]="!activations.onFinish"></app-on-confirm>
           </div>
         </div>
-        <div class="col-xs-12 col-md-4 col-lg-4 pull-right" [hidden]="activations.onFinish || activations.onCancel">
+        <div class="col-xs-12 col-md-4 col-lg-4 pull-right">
           <app-on-overview></app-on-overview>
           <div class="row-fade">
             <app-on-person-card [hidden]="!activations.onPersonCard"></app-on-person-card>
@@ -54,6 +54,12 @@
             <app-on-signature [hidden]="!activations.onSignature"></app-on-signature>
           </div>
         </div>
+      </div>
+      <div class="row" style="margin-bottom: 5px;" [hidden]="!activations.onFinish">
+        <div class="col-lg-12">
+          <app-on-finish></app-on-finish>
+        </div>
+
       </div>
     </div>
   </div>

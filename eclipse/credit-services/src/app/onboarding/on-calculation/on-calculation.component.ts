@@ -15,7 +15,9 @@ export class OnCalculationComponent implements OnInit {
   @Input() value = 1;
   @Input() condiciones = 1;
   @Input() startDate = new Date();
-  currentDate = new Date()
+  currentDate = new Date();
+  mes: string;
+  cuotaMes: string;
 
   constructor(private orderService: OrderService, private onboardingService: OnboardingService) {
   }
@@ -39,6 +41,14 @@ export class OnCalculationComponent implements OnInit {
       startDate,
       condiciones,
       value
+    };
+
+    if(this.value == 1){
+      this.mes = 'mes';
+      this.cuotaMes = '';
+    } else {
+      this.mes = 'meses';
+      this.cuotaMes = '/ mes';
     }
 
     this.onboardingService.condSubject.next(cond);
@@ -48,11 +58,7 @@ export class OnCalculationComponent implements OnInit {
   calcularCondiciones() {
     const token = this.orderToken.subtotal;
 
-    if (this.value === 1) {
-      this.condiciones = this.orderToken.subtotal;
-    } else {
-      this.condiciones = (token / this.value) + (token / this.value) * 0.0595;
-    }
+    this.condiciones = (token / this.value) + (token / this.value) * 0.0595;
 
     this.startDate = new Date(this.startDate.setFullYear(this.currentDate.getFullYear(), this.currentDate.getMonth() + this.value));
 
@@ -65,6 +71,14 @@ export class OnCalculationComponent implements OnInit {
       startDate,
       condiciones,
       value
+    };
+
+    if(this.value == 1){
+      this.mes = 'mes';
+      this.cuotaMes = '';
+    } else {
+      this.mes = 'meses';
+      this.cuotaMes = '/ mes';
     }
 
     this.onboardingService.condSubject.next(cond);

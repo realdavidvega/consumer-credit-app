@@ -29,7 +29,7 @@ export class OnConfirmComponent implements OnInit {
   }
 
   onNext() {
-    this.auth.finish();
+    this.auth.finish()
 
   }
 

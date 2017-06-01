@@ -12,7 +12,6 @@ export const routes: Routes = [
   { path: 'home', loadChildren: './home/home.module#HomeModule' },
   { path: 'onboarding', loadChildren: './onboarding/onboarding.module#OnboardingModule', canActivate: [AuthGuard] },
   { path: 'cancel', component: OnCancelComponent },
-  { path: 'finish', component: OnFinishComponent },
   { path: '**', redirectTo: 'order'}
 ];
 

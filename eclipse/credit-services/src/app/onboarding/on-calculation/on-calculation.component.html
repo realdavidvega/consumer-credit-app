@@ -23,11 +23,11 @@
         </div>
         <div class="col-lg-2 col-md-3 col-sm-3 col-xs-6">
           <h5><b>Plazos</b></h5>
-          {{value}} Meses
+          {{value}} {{mes}}
         </div>
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
           <h5><b>Cuota</b></h5>
-          {{condiciones | currency:'EUR':true:'1.2-2'}} / mes
+          {{condiciones | currency:'EUR':true:'1.2-2'}} {{cuotaMes}}
           <p><a class="currency">Desde tipo interés nominal 5,95% (6,11% TAE)*</a></p>
         </div>
         <div class="col-lg-2 col-md-3 col-sm-3 col-xs-6">

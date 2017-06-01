@@ -14,8 +14,9 @@ export class OnFinishComponent implements OnInit {
   value: number;
   mes: string;
   cuotaMes: string;
+  mostrar = false;
 
-  constructor(private onboardingService: OnboardingService) { }
+  constructor(public onboardingService: OnboardingService) { }
 
   ngOnInit() {
     this.onboardingService.getConditions().subscribe((data: any) => {
@@ -24,12 +25,23 @@ export class OnFinishComponent implements OnInit {
       this.condiciones = data.condiciones;
       this.value = data.value;
 
-      if(data.value == 1){
+
+      if(data.value == 0){
+        this.value = undefined;
+        this.mes = 'Pago inmediato';
+
+        this.condiciones = 0;
+        this.cuotaMes = undefined;
+
+      } else if (data.value == 1) {
         this.mes = 'mes';
-        this.cuotaMes = '';
+        this.cuotaMes = undefined;
+        this.mostrar = true;
+
       } else {
         this.mes = 'meses';
         this.cuotaMes = '/ mes';
+        this.mostrar = true;
       }
 
     });

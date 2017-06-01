@@ -48,7 +48,7 @@ export class AuthService {
   finish() {
     sessionStorage.removeItem('user_token');
     this.subject.next(false);
-    this.router.navigate(['/finish']);
+    this.onboardingService.setOnFinish();
     this.registrado = false;
   }
 
