@@ -1,6 +1,8 @@
 
 import { OnboardingService } from './onboarding.service';
 import { Component, OnInit, OnChanges } from '@angular/core';
+import {OrderToken} from "../home/order/ordertoken";
+import {OrderService} from "../home/order/order.service";
 
 @Component({
   selector: 'app-onboarding',
@@ -12,9 +14,15 @@ export class OnboardingComponent implements OnInit {
   public myWidth = 0;
   public activations;
   public registered = false;
-  constructor(private onboardingService: OnboardingService) { }
+  orderToken: OrderToken;
+  constructor(private onboardingService: OnboardingService, private orderService: OrderService) { }
 
   ngOnInit() {
+
+    this.orderToken = this.orderService.getOrderToken();
+    this.orderService.tokenChanged.subscribe(
+      (token: OrderToken) => this.orderToken = token
+    );
 
     this.activations = this.onboardingService.getActivation();
 
@@ -66,8 +74,16 @@ export class OnboardingComponent implements OnInit {
       }
     });
 
+    const cond = {
+      token: this.orderToken.subtotal,
+      startDate: new Date(),
+      condiciones: 0,
+      value: 1
+    }
+
     this.onboardingService.getType().subscribe((data: any) => {
       if(data.type === 'credito'){
+        this.onboardingService.condSubject.next(cond);
         this.onboardingService.setOnConfirm();
       } else if(data.type === 'aplazado'){
         this.onboardingService.setOnCalculation();

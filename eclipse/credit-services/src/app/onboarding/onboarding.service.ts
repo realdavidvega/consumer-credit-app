@@ -19,6 +19,8 @@ export class OnboardingService {
     onConfirm: false
   };
 
+  public condSubject = new Subject<any>();
+
   public activSubject = new Subject<any>();
   public paymentSubject = new Subject<any>();
   public typeSubject = new Subject<any>();
@@ -81,6 +83,10 @@ export class OnboardingService {
 
   public getActivations(): Observable<any> {
     return this.activSubject.asObservable();
+  }
+
+  public getConditions(): Observable<any> {
+    return this.condSubject.asObservable();
   }
 
   public getActivation(){

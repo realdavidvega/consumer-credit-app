@@ -8,7 +8,6 @@ import { OnPaymentComponent } from './on-payment/on-payment.component';
 import { OnContactComponent } from './on-contact/on-contact.component';
 import { OnCalculationComponent } from './on-calculation/on-calculation.component';
 import { OnSignatureComponent } from './on-signature/on-signature.component';
-import { OnFinishComponent } from './on-finish/on-finish.component';
 import { OnStartComponent } from './on-start/on-start.component';
 import { OnOverviewComponent } from './on-overview/on-overview.component';
 import { OnPersonCardComponent } from './on-person/on-person-card/on-person-card.component';
@@ -19,7 +18,7 @@ import {PdfViewerComponent} from "ng2-pdf-viewer";
 import { OnConfirmComponent } from './on-confirm/on-confirm.component';
 import { AlertModule } from "ngx-bootstrap";
 import {MdSliderModule} from "@angular/material";
-import { OnCancelComponent } from './on-cancel/on-cancel.component';
+import {OnFinishComponent} from "app/onboarding/on-finish/on-finish.component";
 
 @NgModule({
   declarations: [
@@ -29,14 +28,14 @@ import { OnCancelComponent } from './on-cancel/on-cancel.component';
     OnContactComponent,
     OnCalculationComponent,
     OnSignatureComponent,
-    OnFinishComponent,
     OnStartComponent,
     OnOverviewComponent,
     OnPersonCardComponent,
     OnTypeComponent,
     OnIneComponent,
     PdfViewerComponent,
-    OnConfirmComponent
+    OnConfirmComponent,
+    OnFinishComponent
   ], exports: [OnOverviewComponent],
   imports: [
     CommonModule,

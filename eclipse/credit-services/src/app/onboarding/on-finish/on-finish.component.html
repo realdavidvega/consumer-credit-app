@@ -1,1 +1,44 @@
-<i class="glyphicon glyphicon-remove" style="font-size: 50px; color: red;"></i>
+
+<div class="container text-center">
+  <div class="row">
+    <div class="col-lg-offset-3 col-lg-6">
+      <div class="panel panel-primary height">
+        <div class="panel-heading"></div>
+        <div class="panel-body">
+          <i class="glyphicon glyphicon-ok" style="font-size: 150px; color: #128F76;"></i>
+          <h3>Su operación de pago ha sido completada</h3>
+          <hr>
+          <h4>Estimado cliente,</h4>
+          <p>Su orden ha sido tramitada correctamente. Este mensaje le puede servir como recibo, que también le será enviado por email.</p>
+          <hr>
+          <div class="row">
+            <div class="col-lg-2 col-md-3 col-sm-3 col-xs-6">
+              <h5><b>Importe</b></h5>
+              {{token | currency:'EUR':true:'1.2-2'}}
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-3 col-xs-6">
+              <h5><b>Plazo</b></h5>
+              {{value}} {{mes}}
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+              <h5><b>Cuota</b></h5>
+              {{condiciones | currency:'EUR':true:'1.2-2'}} {{cuotaMes}}
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-3 col-xs-6">
+              <h5><b>Comisiones</b></h5>
+              {{0 | currency:'EUR':true:'1.2-2'}}
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+              <h5><b>Vencimiento</b></h5>
+              {{startDate | date: 'dd/MM/yyyy'}}
+            </div>
+          </div>
+          <hr>
+          <button class="btn btn-primary" [routerLink]="['/order']">Finalizar</button>
+        </div>
+
+        <div class="panel-footer"></div>
+      </div>
+    </div>
+  </div>
+</div>

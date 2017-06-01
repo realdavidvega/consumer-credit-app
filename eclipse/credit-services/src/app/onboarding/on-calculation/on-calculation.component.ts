@@ -20,15 +20,28 @@ export class OnCalculationComponent implements OnInit {
   constructor(private orderService: OrderService, private onboardingService: OnboardingService) {
   }
 
-  ngOnInit() {
-    this.orderToken = this.orderService.getOrderToken();
-    this.orderService.tokenChanged.subscribe(
+  async ngOnInit() {
+    this.orderToken = await this.orderService.getOrderToken();
+    await this.orderService.tokenChanged.subscribe(
       (token: OrderToken) => this.orderToken = token
     );
 
     this.condiciones = this.orderToken.subtotal;
-
     this.startDate.setMonth(this.startDate.getMonth() + 1);
+    const token = this.orderToken.subtotal;
+
+    const startDate = this.startDate;
+    const condiciones = this.condiciones;
+    const value = this.value;
+
+    const cond = {
+      token,
+      startDate,
+      condiciones,
+      value
+    }
+
+    this.onboardingService.condSubject.next(cond);
 
   }
 
@@ -41,7 +54,20 @@ export class OnCalculationComponent implements OnInit {
       this.condiciones = (token / this.value) + (token / this.value) * 0.0595;
     }
 
-    this.startDate = new Date(this.startDate.setFullYear(this.currentDate.getFullYear(), this.currentDate.getMonth() + this.value))
+    this.startDate = new Date(this.startDate.setFullYear(this.currentDate.getFullYear(), this.currentDate.getMonth() + this.value));
+
+    const startDate = this.startDate;
+    const condiciones = this.condiciones;
+    const value = this.value;
+
+    const cond = {
+      token,
+      startDate,
+      condiciones,
+      value
+    }
+
+    this.onboardingService.condSubject.next(cond);
   }
 
   onNext() {

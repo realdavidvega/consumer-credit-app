@@ -10,21 +10,21 @@
           <td>Mensualidades</td>
           <td class="text-center"></td>
           <td class="text-center"></td>
-          <td class="text-right">12</td>
+          <td class="text-right">{{value}} {{mes}}</td>
         </tr>
         <tr style="border-bottom: 1px solid lightgrey;"></tr>
         <tr>
           <td>Cuota mensual</td>
           <td class="text-center"></td>
           <td class="text-center"></td>
-          <td class="text-right"> {{456 | currency:'EUR':true:'1.2-2'}} / mes</td>
+          <td class="text-right"> {{condiciones | currency:'EUR':true:'1.2-2'}} {{cuotaMes}}</td>
         </tr>
         <tr style="border-bottom: 1px solid lightgrey;"></tr>
         <tr>
           <td>Vencimiento</td>
           <td class="text-center"></td>
           <td class="text-center"></td>
-          <td class="text-right">16/12/2017</td>
+          <td class="text-right">{{startDate | date: 'dd/MM/yyyy'}}</td>
         </tr>
         </tbody>
       </table>
